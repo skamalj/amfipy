@@ -406,9 +406,8 @@ client = AMFIClient(
 
 ### Using amfipy with Apache Spark and Iceberg
 
-Fetch AMFI data with amfipy and land it into Apache Iceberg tables via PySpark.
-amfipy returns plain Python lists; convert them to a Spark DataFrame with
-`spark.createDataFrame()`.  No Polars or Pandas required.
+Use `as_df=True` to get a **polars DataFrame** directly from amfipy, then convert
+to a Spark DataFrame via Arrow — no pandas, no manual flattening required.
 
 ```python
 from amfipy import AMFIClient
@@ -429,39 +428,36 @@ spark = (
 client = AMFIClient()
 
 # ── 2. NAV history → Iceberg ─────────────────────────────────────────────────
-nav_records = client.nav.history(
-    sd_id=154043, from_date="2026-01-01", to_date="2026-03-31"
+# as_df=True returns a flat polars DataFrame (no manual nav_groups unwinding needed)
+nav_pl = client.nav.history(
+    sd_id=154043, from_date="2026-01-01", to_date="2026-03-31", as_df=True
 )
-# Flatten nav_groups into rows
-rows = [
-    {"mf_name": nav_records["mf_name"],
-     "scheme_name": nav_records["scheme_name"],
-     "nav_name": g["nav_name"],
-     **rec}
-    for g in nav_records.get("nav_groups", [])
-    for rec in g.get("historical_records", [])
-]
-nav_df = spark.createDataFrame(rows)
-nav_df.writeTo("local.amfi.nav_history").createOrReplace()
+# polars → Arrow → Spark (zero-copy, no pandas)
+spark.createDataFrame(nav_pl.to_arrow()).writeTo("local.amfi.nav_history").createOrReplace()
 
 # ── 3. TER data → Iceberg ────────────────────────────────────────────────────
-ter_rows = client.ter.fetch(month="03-2026")          # plain list of dicts
-ter_df   = spark.createDataFrame(ter_rows)
-ter_df.writeTo("local.amfi.ter_march_2026").createOrReplace()
+ter_pl = client.ter.fetch(month="03-2026", as_df=True)
+spark.createDataFrame(ter_pl.to_arrow()).writeTo("local.amfi.ter_march_2026").createOrReplace()
 
 # ── 4. Tracking error → Iceberg ──────────────────────────────────────────────
-tracking_rows = client.tracking.error(date="31-mar-2026")
-tracking_df   = spark.createDataFrame(tracking_rows)
-tracking_df.writeTo("local.amfi.tracking_error").createOrReplace()
+tracking_pl = client.tracking.error(date="31-mar-2026", as_df=True)
+spark.createDataFrame(tracking_pl.to_arrow()).writeTo("local.amfi.tracking_error").createOrReplace()
 
 # ── 5. AUM bifurcation → Iceberg (append mode) ───────────────────────────────
 for date in ["31-Mar-2026", "28-Feb-2026", "31-Jan-2026"]:
-    bif_rows = client.aum.bifurcation(date=date)
-    spark.createDataFrame(bif_rows).writeTo("local.amfi.aum_bifurcation").append()
+    bif_pl = client.aum.bifurcation(date=date, as_df=True)
+    spark.createDataFrame(bif_pl.to_arrow()).writeTo("local.amfi.aum_bifurcation").append()
 
 # ── 6. Query the landed data ─────────────────────────────────────────────────
 spark.sql("SELECT scheme_name, date, nav FROM local.amfi.nav_history ORDER BY date DESC").show()
 spark.sql("SELECT State, LiquidSchemes FROM local.amfi.aum_bifurcation").show()
+```
+
+The pattern is always the same: `client.<module>.<method>(as_df=True).to_arrow()` gives
+a PyArrow Table that Spark reads natively. Install the polars extra to enable `as_df`:
+
+```bash
+pip install amfipy[polars]
 ```
 
 **Tips for production Iceberg pipelines:**

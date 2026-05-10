@@ -1,0 +1,36 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "amfipy"
+version = "0.2.0"
+description = "Python client for AMFI India — NAV, TER, Fund Performance, Tracking Error, Risk Parameters and more"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+keywords = ["amfi", "mutual-fund", "india", "nav", "ter", "finance"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Financial and Insurance Industry",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Office/Business :: Financial",
+]
+dependencies = [
+    "httpx>=0.27",
+]
+
+[project.optional-dependencies]
+polars = ["polars>=1.0"]
+dev = ["build", "twine", "pytest", "pytest-asyncio", "polars>=1.0"]
+
+[project.urls]
+Repository = "https://github.com/your-username/amfipy"
+Issues = "https://github.com/your-username/amfipy/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["amfipy"]

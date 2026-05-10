@@ -29,8 +29,8 @@ polars = ["polars>=1.0"]
 dev = ["build", "twine", "pytest", "pytest-asyncio", "polars>=1.0"]
 
 [project.urls]
-Repository = "https://github.com/your-username/amfipy"
-Issues = "https://github.com/your-username/amfipy/issues"
+Repository = "https://github.com/skamalj/amfipy"
+Issues = "https://github.com/skamalj/amfipy/issues"
 
 [tool.hatch.build.targets.wheel]
 packages = ["amfipy"]

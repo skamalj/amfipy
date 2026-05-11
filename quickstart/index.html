@@ -10,31 +10,31 @@
       
       
       
-        <link rel="canonical" href="https://skamalj.github.io/amfipy/data/risk_parameters/">
+        <link rel="canonical" href="https://skamalj.github.io/amfipy/quickstart/">
       
       
-        <link rel="prev" href="../tracking/">
+        <link rel="prev" href="..">
       
       
-        <link rel="next" href="../nfo/">
+        <link rel="next" href="../userguide/">
       
       
         
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>Risk Parameters - amfipy</title>
+        <title>Quick Start - amfipy</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -53,9 +53,9 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#risk-parameters-data-dictionary" class="md-skip">
+        <a href="#quick-start" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="amfipy" class="md-header__button md-logo" aria-label="amfipy" data-md-component="logo">
+    <a href=".." title="amfipy" class="md-header__button md-logo" aria-label="amfipy" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Risk Parameters
+              Quick Start
             
           </span>
         </div>
@@ -221,11 +221,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../.." class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href=".." class="md-tabs__link">
           
   
   
@@ -247,7 +249,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../api/" class="md-tabs__link">
+        <a href="../api/" class="md-tabs__link">
           
   
   
@@ -265,13 +267,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../data/" class="md-tabs__link">
           
   
   
@@ -313,7 +313,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="amfipy" class="md-nav__button md-logo" aria-label="amfipy" data-md-component="logo">
+    <a href=".." title="amfipy" class="md-nav__button md-logo" aria-label="amfipy" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -340,6 +340,8 @@
       
   
   
+    
+  
   
   
     
@@ -359,20 +361,23 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../.." class="md-nav__link ">
+            <a href=".." class="md-nav__link ">
               
   
   
@@ -390,13 +395,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             
@@ -413,10 +418,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../quickstart/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -432,6 +464,70 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#your-first-data-pull" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Your first data pull
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#async" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Async
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What next?
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -444,7 +540,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../userguide/" class="md-nav__link">
+      <a href="../userguide/" class="md-nav__link">
         
   
   
@@ -472,7 +568,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modules/" class="md-nav__link">
+      <a href="../modules/" class="md-nav__link">
         
   
   
@@ -554,7 +650,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../api/" class="md-nav__link ">
+            <a href="../api/" class="md-nav__link ">
               
   
   
@@ -598,7 +694,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/nav/" class="md-nav__link">
+      <a href="../api/nav/" class="md-nav__link">
         
   
   
@@ -626,7 +722,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/ter/" class="md-nav__link">
+      <a href="../api/ter/" class="md-nav__link">
         
   
   
@@ -654,7 +750,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/sif_ter/" class="md-nav__link">
+      <a href="../api/sif_ter/" class="md-nav__link">
         
   
   
@@ -682,7 +778,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/fund_performance/" class="md-nav__link">
+      <a href="../api/fund_performance/" class="md-nav__link">
         
   
   
@@ -710,7 +806,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/tracking/" class="md-nav__link">
+      <a href="../api/tracking/" class="md-nav__link">
         
   
   
@@ -738,7 +834,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/risk_parameters/" class="md-nav__link">
+      <a href="../api/risk_parameters/" class="md-nav__link">
         
   
   
@@ -766,7 +862,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/nfo/" class="md-nav__link">
+      <a href="../api/nfo/" class="md-nav__link">
         
   
   
@@ -794,7 +890,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/publications/" class="md-nav__link">
+      <a href="../api/publications/" class="md-nav__link">
         
   
   
@@ -822,7 +918,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/cdmdf/" class="md-nav__link">
+      <a href="../api/cdmdf/" class="md-nav__link">
         
   
   
@@ -850,7 +946,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/aum/" class="md-nav__link">
+      <a href="../api/aum/" class="md-nav__link">
         
   
   
@@ -878,7 +974,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/other_data/" class="md-nav__link">
+      <a href="../api/other_data/" class="md-nav__link">
         
   
   
@@ -906,7 +1002,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/research/" class="md-nav__link">
+      <a href="../api/research/" class="md-nav__link">
         
   
   
@@ -938,8 +1034,6 @@
       
   
   
-    
-  
   
   
     
@@ -975,23 +1069,20 @@
     
     
       
-        
-        
-      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../data/" class="md-nav__link ">
               
   
   
@@ -1009,13 +1100,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1035,7 +1126,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../nav/" class="md-nav__link">
+      <a href="../data/nav/" class="md-nav__link">
         
   
   
@@ -1063,7 +1154,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ter/" class="md-nav__link">
+      <a href="../data/ter/" class="md-nav__link">
         
   
   
@@ -1091,7 +1182,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../fund_performance/" class="md-nav__link">
+      <a href="../data/fund_performance/" class="md-nav__link">
         
   
   
@@ -1119,7 +1210,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tracking/" class="md-nav__link">
+      <a href="../data/tracking/" class="md-nav__link">
         
   
   
@@ -1144,37 +1235,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Risk Parameters
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../data/risk_parameters/" class="md-nav__link">
         
   
   
@@ -1190,48 +1254,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#fetch-risk-parameter-records" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        fetch() — Risk parameter records
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#parameter-reference" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Parameter reference
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1244,7 +1266,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../nfo/" class="md-nav__link">
+      <a href="../data/nfo/" class="md-nav__link">
         
   
   
@@ -1272,7 +1294,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../publications/" class="md-nav__link">
+      <a href="../data/publications/" class="md-nav__link">
         
   
   
@@ -1300,7 +1322,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cdmdf/" class="md-nav__link">
+      <a href="../data/cdmdf/" class="md-nav__link">
         
   
   
@@ -1328,7 +1350,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../aum/" class="md-nav__link">
+      <a href="../data/aum/" class="md-nav__link">
         
   
   
@@ -1356,7 +1378,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../other_data/" class="md-nav__link">
+      <a href="../data/other_data/" class="md-nav__link">
         
   
   
@@ -1384,7 +1406,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../research/" class="md-nav__link">
+      <a href="../data/research/" class="md-nav__link">
         
   
   
@@ -1439,10 +1461,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#fetch-risk-parameter-records" class="md-nav__link">
+  <a href="#installation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        fetch() — Risk parameter records
+        Installation
       
     </span>
   </a>
@@ -1450,10 +1472,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#parameter-reference" class="md-nav__link">
+  <a href="#your-first-data-pull" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Parameter reference
+        Your first data pull
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#async" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Async
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What next?
       
     </span>
   </a>
@@ -1477,114 +1521,68 @@
 
 
 
-<h1 id="risk-parameters-data-dictionary">Risk Parameters Data Dictionary</h1>
-<blockquote>
-<p><strong>API reference:</strong> <a href="../../api/risk_parameters/"><code>client.risk_parameters</code></a></p>
-</blockquote>
+<h1 id="quick-start">Quick Start</h1>
+<h2 id="installation">Installation</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>amfipy
+</code></pre></div>
+<p>Add polars DataFrame support (needed for <code>as_df=True</code>):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>pip<span class="w"> </span>install<span class="w"> </span>amfipy<span class="o">[</span>polars<span class="o">]</span>
+</code></pre></div>
 <hr />
-<h2 id="fetch-risk-parameter-records"><code>fetch()</code> — Risk parameter records</h2>
-<p>Each record represents one scheme's monthly risk metrics for the requested category.</p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Example</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>MF_Name</code></td>
-<td><code>str</code></td>
-<td><code>"HDFC Mutual Fund"</code></td>
-<td>AMC name</td>
-</tr>
-<tr>
-<td><code>Scheme_Name</code></td>
-<td><code>str</code></td>
-<td><code>"HDFC Mid-Cap Opportunities Fund - Growth"</code></td>
-<td>Scheme name</td>
-</tr>
-<tr>
-<td><code>Scheme_Code</code></td>
-<td><code>str</code></td>
-<td><code>"118989"</code></td>
-<td>AMFI scheme code</td>
-</tr>
-<tr>
-<td><code>ISIN</code></td>
-<td><code>str</code></td>
-<td><code>"INF179K01VQ0"</code></td>
-<td>ISIN code</td>
-</tr>
-<tr>
-<td><code>Standard_Deviation</code></td>
-<td><code>str</code></td>
-<td><code>"14.23"</code></td>
-<td>Annualised standard deviation of returns (%)</td>
-</tr>
-<tr>
-<td><code>Beta</code></td>
-<td><code>str</code></td>
-<td><code>"0.92"</code></td>
-<td>Beta vs benchmark — sensitivity to market movements</td>
-</tr>
-<tr>
-<td><code>Sharpe_Ratio</code></td>
-<td><code>str</code></td>
-<td><code>"1.35"</code></td>
-<td>Sharpe ratio (risk-adjusted return; higher = better)</td>
-</tr>
-<tr>
-<td><code>Treynor_Ratio</code></td>
-<td><code>str</code></td>
-<td><code>"21.05"</code></td>
-<td>Treynor ratio (return per unit of systematic risk)</td>
-</tr>
-<tr>
-<td><code>Jensens_Alpha</code></td>
-<td><code>str</code></td>
-<td><code>"2.10"</code></td>
-<td>Jensen's alpha — excess return vs CAPM prediction (%)</td>
-</tr>
-<tr>
-<td><code>Report_Date</code></td>
-<td><code>str</code></td>
-<td><code>"01-Mar-2026"</code></td>
-<td>First day of the reporting month</td>
-</tr>
-</tbody>
-</table>
-<div class="admonition note">
-<p class="admonition-title">Category IDs</p>
-<p>The <code>category_id</code> parameter is numeric and not fully documented by AMFI.
-Known value: <code>17</code> = Mid Cap Fund.
-Enumerate empirically or inspect the AMFI risk-parameters page source to find other IDs.</p>
-</div>
+<h2 id="your-first-data-pull">Your first data pull</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">amfipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">AMFIClient</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">client</span> <span class="o">=</span> <span class="n">AMFIClient</span><span class="p">()</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1"># Latest NAV for all funds</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="n">nav</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">nav</span><span class="o">.</span><span class="n">latest</span><span class="p">()</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="c1"># TER for March 2026 as a polars DataFrame</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="n">ter_df</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">ter</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="n">month</span><span class="o">=</span><span class="s2">&quot;03-2026&quot;</span><span class="p">,</span> <span class="n">as_df</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="c1"># Download TER as Excel (raw bytes — save anywhere)</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="n">excel_bytes</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">ter</span><span class="o">.</span><span class="n">download_excel</span><span class="p">(</span><span class="n">month</span><span class="o">=</span><span class="s2">&quot;03-2026&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;ter_march_2026.xlsx&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">excel_bytes</span><span class="p">)</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="c1"># Historical NAV — auto-flattens nested nav_groups into a flat DataFrame</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="n">hist_df</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">nav</span><span class="o">.</span><span class="n">history</span><span class="p">(</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>    <span class="n">sd_id</span><span class="o">=</span><span class="mi">154043</span><span class="p">,</span> <span class="n">from_date</span><span class="o">=</span><span class="s2">&quot;2026-01-01&quot;</span><span class="p">,</span> <span class="n">to_date</span><span class="o">=</span><span class="s2">&quot;2026-03-31&quot;</span><span class="p">,</span> <span class="n">as_df</span><span class="o">=</span><span class="kc">True</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="p">)</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="c1"># Tracking error</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="n">error_df</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">tracking</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="s2">&quot;31-mar-2026&quot;</span><span class="p">,</span> <span class="n">as_df</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="c1"># AUM bifurcation (Direct Plan split)</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="n">bif_df</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">aum</span><span class="o">.</span><span class="n">bifurcation</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="s2">&quot;31-Mar-2026&quot;</span><span class="p">,</span> <span class="n">as_df</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
 <hr />
-<h2 id="parameter-reference">Parameter reference</h2>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Values</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>date</code></td>
-<td><code>"01-Mon-YYYY"</code> — always day=01</td>
-<td>e.g. <code>"01-Mar-2026"</code></td>
-</tr>
-<tr>
-<td><code>category_id</code></td>
-<td>numeric (e.g. <code>17</code>)</td>
-<td>SEBI scheme category numeric ID</td>
-</tr>
-</tbody>
-</table>
+<h2 id="async">Async</h2>
+<p><code>AsyncAMFIClient</code> has an identical API — just <code>await</code> the calls.<br />
+Use it in web servers or wherever you want concurrent fetches:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">amfipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">AsyncAMFIClient</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="n">client</span> <span class="o">=</span> <span class="n">AsyncAMFIClient</span><span class="p">()</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="c1"># Three datasets fetched concurrently</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    <span class="n">ter</span><span class="p">,</span> <span class="n">nav</span><span class="p">,</span> <span class="n">nfo</span> <span class="o">=</span> <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>        <span class="n">client</span><span class="o">.</span><span class="n">ter</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="n">month</span><span class="o">=</span><span class="s2">&quot;03-2026&quot;</span><span class="p">,</span> <span class="n">as_df</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>        <span class="n">client</span><span class="o">.</span><span class="n">nav</span><span class="o">.</span><span class="n">all_navs_for_date</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="s2">&quot;2026-03-31&quot;</span><span class="p">),</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>        <span class="n">client</span><span class="o">.</span><span class="n">nfo</span><span class="o">.</span><span class="n">flat</span><span class="p">(),</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>    <span class="p">)</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>    <span class="k">return</span> <span class="n">ter</span><span class="p">,</span> <span class="n">nav</span><span class="p">,</span> <span class="n">nfo</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+</code></pre></div>
+<hr />
+<h2 id="what-next">What next?</h2>
+<ul>
+<li><a href="../userguide/">User Guide</a> — how <code>as_df=True</code> works, Excel downloads, batch fetching, date formats, Spark integration</li>
+<li><a href="../modules/">Module Examples</a> — copy-paste snippets for every module</li>
+<li><a href="../api/">API Reference</a> — full parameter docs</li>
+<li><a href="../data/">Data Dictionary</a> — field-level schema for every dataset</li>
+</ul>
 
 
 
@@ -1640,10 +1638,10 @@ Enumerate empirically or inspect the AMFI risk-parameters page source to find ot
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.top", "toc.follow", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.top", "toc.follow", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>

@@ -1,0 +1,2134 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Python client for AMFI India — NAV, TER, AUM, Tracking Error and more">
+      
+      
+      
+        <link rel="canonical" href="https://skamalj.github.io/amfipy/modules/">
+      
+      
+        <link rel="prev" href="../userguide/">
+      
+      
+        <link rel="next" href="../api/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Module Examples - amfipy</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#module-examples" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="amfipy" class="md-header__button md-logo" aria-label="amfipy" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            amfipy
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Module Examples
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/skamalj/amfipy" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    skamalj/amfipy
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href=".." class="md-tabs__link">
+          
+  
+  
+    
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../api/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  API Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../data/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Data Dictionary
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="amfipy" class="md-nav__button md-logo" aria-label="amfipy" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    amfipy
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/skamalj/amfipy" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    skamalj/amfipy
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href=".." class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Home
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quick Start
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../userguide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module Examples
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Module Examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#nav" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NAV
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ter-mf-schemes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TER — MF Schemes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ter-sif-schemes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TER — SIF Schemes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fund-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fund Performance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tracking-error-difference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tracking Error &amp; Difference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risk-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk Parameters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nfo-new-fund-offers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NFO — New Fund Offers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#publications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Publications
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cdmdf-nav" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CDMDF NAV
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aum-assets-under-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AUM — Assets Under Management
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Data
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#research-categorisation-of-stocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Research — Categorisation of Stocks
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../api/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/nav/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NAV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/ter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TER (MF)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/sif_ter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TER (SIF)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/fund_performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fund Performance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tracking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/risk_parameters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Risk Parameters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/nfo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NFO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Publications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/cdmdf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CDMDF NAV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/aum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AUM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/other_data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Other Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/research/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Research
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../data/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Dictionary
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data Dictionary
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data/nav/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NAV Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data/ter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TER Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data/fund_performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fund Performance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data/tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tracking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data/risk_parameters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Risk Parameters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data/nfo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NFO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data/publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Publications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data/cdmdf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CDMDF NAV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data/aum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AUM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data/other_data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Other Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data/research/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Research
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#nav" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NAV
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ter-mf-schemes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TER — MF Schemes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ter-sif-schemes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TER — SIF Schemes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fund-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fund Performance
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tracking-error-difference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tracking Error &amp; Difference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#risk-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Risk Parameters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nfo-new-fund-offers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        NFO — New Fund Offers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#publications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Publications
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cdmdf-nav" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CDMDF NAV
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aum-assets-under-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AUM — Assets Under Management
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other Data
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#research-categorisation-of-stocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Research — Categorisation of Stocks
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="module-examples">Module Examples</h1>
+<p>Copy-paste examples for every module.  All examples use the sync <code>AMFIClient</code>; prefix calls with <code>await</code> and use <code>AsyncAMFIClient</code> for the async equivalent.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">amfipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">AMFIClient</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">client</span> <span class="o">=</span> <span class="n">AMFIClient</span><span class="p">()</span>
+</code></pre></div>
+<hr />
+<h2 id="nav">NAV</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Latest NAV — all funds</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">nav</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">nav</span><span class="o">.</span><span class="n">latest</span><span class="p">()</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1"># → {&quot;data&quot;: [{type, categories: [{category, nav: [...]}]}], &quot;count&quot;: N}</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1"># Latest NAV — single AMC, filtered by fund type</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">nav</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">nav</span><span class="o">.</span><span class="n">latest</span><span class="p">(</span><span class="n">mf_id</span><span class="o">=</span><span class="mi">62</span><span class="p">,</span> <span class="n">fund_type</span><span class="o">=</span><span class="s2">&quot;Open Ended&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c1"># Category-level summary (no scheme detail)</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="n">cat</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">nav</span><span class="o">.</span><span class="n">latest_by_category</span><span class="p">(</span><span class="n">mf_id</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="c1"># Scheme list for an AMC — use nav_id as sd_id in history calls</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="n">schemes</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">nav</span><span class="o">.</span><span class="n">schemes</span><span class="p">(</span><span class="n">mf_id</span><span class="o">=</span><span class="mi">85</span><span class="p">)</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="c1"># → [{&quot;nav_id&quot;: &quot;154043&quot;, &quot;nav_name&quot;: &quot;Abakkus Flexi Cap Fund - Direct - Growth&quot;, &quot;MF_ID&quot;: &quot;85&quot;}, ...]</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="c1"># All scheme NAVs as of a specific date</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="n">all_navs</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">nav</span><span class="o">.</span><span class="n">all_navs_for_date</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="s2">&quot;2026-03-31&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="n">all_df</span>   <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">nav</span><span class="o">.</span><span class="n">all_navs_for_date</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="s2">&quot;2026-03-31&quot;</span><span class="p">,</span> <span class="n">as_df</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="c1"># Historical NAV — raw nested response</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="n">hist</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">nav</span><span class="o">.</span><span class="n">history</span><span class="p">(</span><span class="n">sd_id</span><span class="o">=</span><span class="mi">154043</span><span class="p">,</span> <span class="n">from_date</span><span class="o">=</span><span class="s2">&quot;2026-01-01&quot;</span><span class="p">,</span> <span class="n">to_date</span><span class="o">=</span><span class="s2">&quot;2026-03-31&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="c1"># hist[&quot;mf_name&quot;], hist[&quot;scheme_name&quot;], hist[&quot;nav_groups&quot;][0][&quot;nav_name&quot;]</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="c1"># Historical NAV — flat polars DataFrame (nav_groups auto-flattened)</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="n">hist_df</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">nav</span><span class="o">.</span><span class="n">history</span><span class="p">(</span><span class="n">sd_id</span><span class="o">=</span><span class="mi">154043</span><span class="p">,</span> <span class="n">from_date</span><span class="o">=</span><span class="s2">&quot;2026-01-01&quot;</span><span class="p">,</span> <span class="n">to_date</span><span class="o">=</span><span class="s2">&quot;2026-03-31&quot;</span><span class="p">,</span> <span class="n">as_df</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="c1"># columns: mf_name, scheme_name, nav_name, date, nav, repurchase_price, sale_price</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="c1"># Batch — multiple date ranges</span>
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="n">ranges</span>  <span class="o">=</span> <span class="p">[(</span><span class="s2">&quot;2026-01-01&quot;</span><span class="p">,</span> <span class="s2">&quot;2026-01-31&quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;2026-02-01&quot;</span><span class="p">,</span> <span class="s2">&quot;2026-02-28&quot;</span><span class="p">)]</span>
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="n">results</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">nav</span><span class="o">.</span><span class="n">fetch_range</span><span class="p">(</span><span class="n">sd_id</span><span class="o">=</span><span class="mi">154043</span><span class="p">,</span> <span class="n">months</span><span class="o">=</span><span class="n">ranges</span><span class="p">)</span>
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="c1"># High/Low NAV</span>
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a><span class="n">hl</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">nav</span><span class="o">.</span><span class="n">high_low</span><span class="p">(</span><span class="n">sd_id</span><span class="o">=</span><span class="mi">154043</span><span class="p">,</span> <span class="n">from_date</span><span class="o">=</span><span class="s2">&quot;2026-01-01&quot;</span><span class="p">,</span> <span class="n">to_date</span><span class="o">=</span><span class="s2">&quot;2026-03-31&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a><span class="n">hl</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">nav</span><span class="o">.</span><span class="n">high_low</span><span class="p">(</span><span class="n">sd_id</span><span class="o">=</span><span class="mi">154043</span><span class="p">,</span> <span class="n">from_date</span><span class="o">=</span><span class="s2">&quot;2026-01-01&quot;</span><span class="p">,</span> <span class="n">to_date</span><span class="o">=</span><span class="s2">&quot;2026-03-31&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>                         <span class="n">period_type</span><span class="o">=</span><span class="s2">&quot;Annual&quot;</span><span class="p">,</span> <span class="n">nav_type</span><span class="o">=</span><span class="s2">&quot;high&quot;</span><span class="p">)</span>  <span class="c1"># period_type: Month|Annual</span>
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>
+<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a><span class="c1"># Compare NAV on two dates</span>
+<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a><span class="n">cmp</span>    <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">nav</span><span class="o">.</span><span class="n">compare</span><span class="p">(</span><span class="n">sd_id</span><span class="o">=</span><span class="mi">154043</span><span class="p">,</span> <span class="n">date1</span><span class="o">=</span><span class="s2">&quot;2026-01-01&quot;</span><span class="p">,</span> <span class="n">date2</span><span class="o">=</span><span class="s2">&quot;2026-03-31&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a><span class="n">cmp_df</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">nav</span><span class="o">.</span><span class="n">compare</span><span class="p">(</span><span class="n">sd_id</span><span class="o">=</span><span class="mi">154043</span><span class="p">,</span> <span class="n">date1</span><span class="o">=</span><span class="s2">&quot;2026-01-01&quot;</span><span class="p">,</span> <span class="n">date2</span><span class="o">=</span><span class="s2">&quot;2026-03-31&quot;</span><span class="p">,</span> <span class="n">as_df</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>
+<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a><span class="c1"># Full NAV flat file — all schemes for one date, plain-text pipe-delimited, raw bytes</span>
+<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a><span class="n">nav_file</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">nav</span><span class="o">.</span><span class="n">download_file</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="s2">&quot;31-Mar-2026&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;navs.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">nav_file</span><span class="p">)</span>
+</code></pre></div>
+<p><strong><code>fund_type</code> values:</strong> <code>""</code> all · <code>"Open Ended"</code> · <code>"Close Ended"</code> · <code>"Interval Fund"</code></p>
+<hr />
+<h2 id="ter-mf-schemes">TER — MF Schemes</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># List available months for a financial year (first item = most recent)</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">months</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">ter</span><span class="o">.</span><span class="n">months</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="s2">&quot;2025-2026&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="c1"># → [{&quot;MonthYear&quot;: &quot;March-2026&quot;, &quot;MonthNumber&quot;: &quot;03-2026&quot;}, ...]</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="c1"># Fetch TER — list of dicts</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="n">data</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">ter</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="n">month</span><span class="o">=</span><span class="s2">&quot;03-2026&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="n">data</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">ter</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="n">month</span><span class="o">=</span><span class="s2">&quot;03-2026&quot;</span><span class="p">,</span> <span class="n">mf_id</span><span class="o">=</span><span class="mi">62</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="s2">&quot;Equity Scheme&quot;</span><span class="p">,</span> <span class="n">fund_type</span><span class="o">=</span><span class="s2">&quot;Open Ended&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="c1"># Fetch TER — polars DataFrame</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="n">df</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">ter</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="n">month</span><span class="o">=</span><span class="s2">&quot;03-2026&quot;</span><span class="p">,</span> <span class="n">as_df</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="c1"># Fetch latest month automatically (omit month=)</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="n">data</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">ter</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="s2">&quot;2025-2026&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="c1"># Batch — multiple months → dict keyed by month string</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="n">results</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">ter</span><span class="o">.</span><span class="n">fetch_range</span><span class="p">(</span><span class="n">months</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;03-2026&quot;</span><span class="p">,</span> <span class="s2">&quot;02-2026&quot;</span><span class="p">,</span> <span class="s2">&quot;01-2026&quot;</span><span class="p">])</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="c1"># Download Excel (single-sheet .xlsx) — raw bytes</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="n">excel</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">ter</span><span class="o">.</span><span class="n">download_excel</span><span class="p">(</span><span class="n">month</span><span class="o">=</span><span class="s2">&quot;03-2026&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="n">excel</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">ter</span><span class="o">.</span><span class="n">download_excel</span><span class="p">(</span><span class="n">month</span><span class="o">=</span><span class="s2">&quot;03-2026&quot;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="s2">&quot;Equity Scheme&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;ter.xlsx&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">excel</span><span class="p">)</span>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="c1"># Sub-category lookup</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="n">subcats</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">ter</span><span class="o">.</span><span class="n">sub_categories</span><span class="p">(</span><span class="n">fund_type</span><span class="o">=</span><span class="s2">&quot;Open Ended&quot;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="s2">&quot;Equity Scheme&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p><strong><code>category</code> values:</strong> <code>"-1"</code> All · <code>"Equity Scheme"</code> · <code>"Debt Scheme"</code> · <code>"Hybrid Scheme"</code> · <code>"Other Scheme"</code> · <code>"Solution Oriented Scheme"</code><br />
+<strong><code>fund_type</code> values:</strong> <code>"-1"</code> All · <code>"Open Ended"</code> · <code>"Close Ended"</code> · <code>"Interval Fund"</code></p>
+<hr />
+<h2 id="ter-sif-schemes">TER — SIF Schemes</h2>
+<p>Same interface as MF TER; use <code>sif_id</code> instead of <code>mf_id</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">months</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">sif_ter</span><span class="o">.</span><span class="n">months</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="s2">&quot;2025-2026&quot;</span><span class="p">)</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">data</span>   <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">sif_ter</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="n">month</span><span class="o">=</span><span class="s2">&quot;03-2026&quot;</span><span class="p">,</span> <span class="n">sif_id</span><span class="o">=</span><span class="s2">&quot;All&quot;</span><span class="p">,</span> <span class="n">as_df</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">excel</span>  <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">sif_ter</span><span class="o">.</span><span class="n">download_excel</span><span class="p">(</span><span class="n">month</span><span class="o">=</span><span class="s2">&quot;03-2026&quot;</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h2 id="fund-performance">Fund Performance</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># All filter options — maturity types, categories, full AMC list with IDs</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">filters</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">fund_performance</span><span class="o">.</span><span class="n">filters</span><span class="p">()</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1"># → {&quot;maturityTypeList&quot;: [...], &quot;investmentTypeList&quot;: [...], &quot;mutualFundList&quot;: [...]}</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="c1"># Sub-categories for a category</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="n">subcats</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">fund_performance</span><span class="o">.</span><span class="n">sub_categories</span><span class="p">(</span><span class="n">category</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># 1=Equity</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="c1"># Fetch performance</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="n">perf</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">fund_performance</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>    <span class="n">maturity_type</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>           <span class="c1"># 1=Open Ended, 2=Close Ended</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>    <span class="n">category</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>                <span class="c1"># 1=Equity, 2=Debt, 3=Hybrid, 4=Solution Oriented, 5=Other</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>    <span class="n">sub_category</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>            <span class="c1"># ID from sub_categories()</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>    <span class="n">mf_id</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>                   <span class="c1"># 0=All, or fund ID from filters()[&quot;mutualFundList&quot;]</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>    <span class="n">report_date</span><span class="o">=</span><span class="s2">&quot;07-May-2026&quot;</span><span class="p">,</span> <span class="c1"># DD-Mon-YYYY; omit for last business day</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="p">)</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>No server-side Excel download — the AMFI site generates it client-side only.</p>
+</div>
+<hr />
+<h2 id="tracking-error-difference">Tracking Error &amp; Difference</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Tracking Error — lowercase month in date</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">error</span>    <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">tracking</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="s2">&quot;31-mar-2026&quot;</span><span class="p">)</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="n">error</span>    <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">tracking</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="s2">&quot;31-mar-2026&quot;</span><span class="p">,</span> <span class="n">mf_id</span><span class="o">=</span><span class="mi">62</span><span class="p">)</span>  <span class="c1"># single AMC</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="n">error_df</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">tracking</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="s2">&quot;31-mar-2026&quot;</span><span class="p">,</span> <span class="n">as_df</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="c1"># Batch</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="n">errors</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">tracking</span><span class="o">.</span><span class="n">error_range</span><span class="p">(</span><span class="n">dates</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;31-mar-2026&quot;</span><span class="p">,</span> <span class="s2">&quot;28-feb-2026&quot;</span><span class="p">,</span> <span class="s2">&quot;31-jan-2026&quot;</span><span class="p">])</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="c1"># Tracking Difference — title-case month, always day=01</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="n">diff</span>    <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">tracking</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">month</span><span class="o">=</span><span class="s2">&quot;01-Apr-2026&quot;</span><span class="p">)</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="n">diff</span>    <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">tracking</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">month</span><span class="o">=</span><span class="s2">&quot;01-Apr-2026&quot;</span><span class="p">,</span> <span class="n">mf_id</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">)</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="n">diff_df</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">tracking</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">month</span><span class="o">=</span><span class="s2">&quot;01-Apr-2026&quot;</span><span class="p">,</span> <span class="n">as_df</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="c1"># Batch</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="n">diffs</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">tracking</span><span class="o">.</span><span class="n">difference_range</span><span class="p">(</span><span class="n">months</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;01-Apr-2026&quot;</span><span class="p">,</span> <span class="s2">&quot;01-Mar-2026&quot;</span><span class="p">])</span>
+</code></pre></div>
+<hr />
+<h2 id="risk-parameters">Risk Parameters</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># date: &quot;01-Mon-YYYY&quot; — always day=01</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1"># category_id: numeric SEBI category (17 = Mid Cap Fund)</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">risk</span>    <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">risk_parameters</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="s2">&quot;01-Mar-2026&quot;</span><span class="p">,</span> <span class="n">category_id</span><span class="o">=</span><span class="mi">17</span><span class="p">)</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="n">risk_df</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">risk_parameters</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="s2">&quot;01-Mar-2026&quot;</span><span class="p">,</span> <span class="n">category_id</span><span class="o">=</span><span class="mi">17</span><span class="p">,</span> <span class="n">as_df</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="c1"># Batch across months</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="n">results</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">risk_parameters</span><span class="o">.</span><span class="n">fetch_range</span><span class="p">(</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>    <span class="n">dates</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;01-Mar-2026&quot;</span><span class="p">,</span> <span class="s2">&quot;01-Feb-2026&quot;</span><span class="p">,</span> <span class="s2">&quot;01-Jan-2026&quot;</span><span class="p">],</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>    <span class="n">category_id</span><span class="o">=</span><span class="mi">17</span><span class="p">,</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h2 id="nfo-new-fund-offers">NFO — New Fund Offers</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># Full grouped response</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">nfos</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">nfo</span><span class="o">.</span><span class="n">fetch</span><span class="p">()</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="c1"># → {&quot;NewFundOffer&quot;: [{&quot;MutualFund&quot;: &quot;...&quot;, &quot;items&quot;: [{Scheme_Id, SchemeName, MF_Id}]}]}</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="c1"># Flat list (no AMC grouping)</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="n">items</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">nfo</span><span class="o">.</span><span class="n">flat</span><span class="p">()</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="c1"># → [{&quot;Scheme_Id&quot;: 14475, &quot;MutualFund&quot;: &quot;Axis Mutual Fund&quot;, &quot;SchemeName&quot;: &quot;...&quot;, &quot;MF_Id&quot;: 53}, ...]</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="c1"># Polars DataFrame</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="n">df</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">nfo</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="n">as_df</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h2 id="publications">Publications</h2>
+<p>These methods return <strong>metadata</strong> (titles + URLs).  Use <code>download_file(url)</code> to get the actual bytes.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># Monthly reports — flat list across all financial years</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">flat</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">publications</span><span class="o">.</span><span class="n">monthly_flat</span><span class="p">()</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="c1"># → [{&quot;Title&quot;: &quot;March 2026&quot;, &quot;month&quot;: &quot;03&quot;, &quot;year&quot;: &quot;2026&quot;,</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="c1">#     &quot;pdf_url&quot;: &quot;...&quot;, &quot;excel_url&quot;: &quot;...&quot;, &quot;financial_year&quot;: &quot;...&quot;}, ...]</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="c1"># Download the latest month&#39;s XLS (multi-sheet workbook)</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="n">xls</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">publications</span><span class="o">.</span><span class="n">download_file</span><span class="p">(</span><span class="n">flat</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;excel_url&quot;</span><span class="p">])</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;amfi_monthly.xls&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">xls</span><span class="p">)</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="c1"># Also available grouped by financial year</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="n">grouped</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">publications</span><span class="o">.</span><span class="n">monthly</span><span class="p">()</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="c1"># Quarterly issues</span>
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="n">flat_q</span>   <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">publications</span><span class="o">.</span><span class="n">quarterly_flat</span><span class="p">()</span>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="n">grouped_q</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">publications</span><span class="o">.</span><span class="n">quarterly</span><span class="p">()</span>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="c1"># → [{&quot;issue_no&quot;: &quot;Issue IV&quot;, &quot;period&quot;: &quot;(Jan - Mar 2026)&quot;, &quot;pdf_url&quot;: &quot;...&quot;, &quot;excel_url&quot;: &quot;...&quot;}, ...]</span>
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="c1"># Annual commission disclosures</span>
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="n">commission</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">publications</span><span class="o">.</span><span class="n">commission</span><span class="p">()</span>
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a><span class="c1"># → [{&quot;Period&quot;: &quot;FY 2024 - 2025&quot;, &quot;URL&quot;: &quot;https://...&quot;}, ...]</span>
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="n">pdf</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">publications</span><span class="o">.</span><span class="n">download_file</span><span class="p">(</span><span class="n">commission</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;URL&quot;</span><span class="p">])</span>
+<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;commission_fy24_25.pdf&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">pdf</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h2 id="cdmdf-nav">CDMDF NAV</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># Historical CDMDF NAV — date: &quot;DD-mon-YYYY&quot; lowercase</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="n">cdmdf</span>    <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">cdmdf</span><span class="o">.</span><span class="n">history</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="s2">&quot;31-mar-2026&quot;</span><span class="p">)</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="n">cdmdf_df</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">cdmdf</span><span class="o">.</span><span class="n">history</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="s2">&quot;31-mar-2026&quot;</span><span class="p">,</span> <span class="n">as_df</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="c1"># Batch → dict keyed by date</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="n">results</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">cdmdf</span><span class="o">.</span><span class="n">history_range</span><span class="p">(</span><span class="n">dates</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;31-mar-2026&quot;</span><span class="p">,</span> <span class="s2">&quot;28-feb-2026&quot;</span><span class="p">])</span>
+</code></pre></div>
+<hr />
+<h2 id="aum-assets-under-management">AUM — Assets Under Management</h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:5"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Average AUM</label><label for="__tabbed_1_2">AUM–AAUM Disclosure</label><label for="__tabbed_1_3">Age-wise / Folio</label><label for="__tabbed_1_4">Classified AUM</label><label for="__tabbed_1_5">Bifurcation of AUM</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># Step 1 — list financial years</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="n">fys</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">aum</span><span class="o">.</span><span class="n">financial_years</span><span class="p">()</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="c1"># → [{&quot;id&quot;: 1, &quot;financial_year&quot;: &quot;April 2025 - March 2026&quot;}, ...]</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="c1"># Step 2 — list quarters for a year</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="n">periods</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">aum</span><span class="o">.</span><span class="n">periods</span><span class="p">(</span><span class="n">fy_id</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="c1"># → {&quot;financial_year&quot;: &quot;...&quot;, &quot;periods&quot;: [{&quot;id&quot;: 1, &quot;period&quot;: &quot;January - March 2026&quot;}, ...]}</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="c1"># Fund-wise average AUM</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="n">data</span>  <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">aum</span><span class="o">.</span><span class="n">average_aum_fundwise</span><span class="p">(</span><span class="n">fy_id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">period_id</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="n">df</span>    <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">aum</span><span class="o">.</span><span class="n">average_aum_fundwise</span><span class="p">(</span><span class="n">fy_id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">period_id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">as_df</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="n">excel</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">aum</span><span class="o">.</span><span class="n">average_aum_fundwise_excel</span><span class="p">(</span><span class="n">fy_id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">period_id</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="c1"># Scheme-wise average AUM  (str_type: &quot;Categorywise&quot; | &quot;Typewise&quot;, mf_id: 0=All)</span>
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="n">data</span>  <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">aum</span><span class="o">.</span><span class="n">average_aum_schemewise</span><span class="p">(</span><span class="n">fy_id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">period_id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">str_type</span><span class="o">=</span><span class="s2">&quot;Categorywise&quot;</span><span class="p">,</span> <span class="n">mf_id</span><span class="o">=</span><span class="mi">62</span><span class="p">)</span>
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="n">df</span>    <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">aum</span><span class="o">.</span><span class="n">average_aum_schemewise</span><span class="p">(</span><span class="n">fy_id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">period_id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">as_df</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="n">excel</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">aum</span><span class="o">.</span><span class="n">average_aum_schemewise_excel</span><span class="p">(</span><span class="n">fy_id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">period_id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">str_type</span><span class="o">=</span><span class="s2">&quot;Typewise&quot;</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="c1"># fyId: &quot;2025-26&quot;, &quot;2024-25&quot; (shortened financial year)</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="c1"># By fund category</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="n">disc_cat</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">aum</span><span class="o">.</span><span class="n">disclosure_by_category</span><span class="p">(</span><span class="n">fy_id</span><span class="o">=</span><span class="s2">&quot;2025-26&quot;</span><span class="p">)</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="c1"># → [{&quot;Period&quot;: &quot;(Oct - Dec 2025)&quot;, &quot;pdfURL&quot;: &quot;...&quot;, &quot;excelURL&quot;: &quot;...&quot;}, ...]</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="n">df</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">aum</span><span class="o">.</span><span class="n">disclosure_by_category</span><span class="p">(</span><span class="n">fy_id</span><span class="o">=</span><span class="s2">&quot;2025-26&quot;</span><span class="p">,</span> <span class="n">as_df</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="c1"># By geography</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="n">disc_geo</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">aum</span><span class="o">.</span><span class="n">disclosure_by_geography</span><span class="p">(</span><span class="n">fy_id</span><span class="o">=</span><span class="s2">&quot;2025-26&quot;</span><span class="p">)</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="n">df</span>       <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">aum</span><span class="o">.</span><span class="n">disclosure_by_geography</span><span class="p">(</span><span class="n">fy_id</span><span class="o">=</span><span class="s2">&quot;2025-26&quot;</span><span class="p">,</span> <span class="n">as_df</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1"># month: &quot;MonthName-YYYY&quot;</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="n">af</span>    <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">aum</span><span class="o">.</span><span class="n">agewise_folio</span><span class="p">(</span><span class="n">month</span><span class="o">=</span><span class="s2">&quot;March-2026&quot;</span><span class="p">)</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="c1"># raw → {&quot;data&quot;: {&quot;investorClassification&quot;: [...], &quot;ageWiseAUM&quot;: [...]}}</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="n">af_df</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">aum</span><span class="o">.</span><span class="n">agewise_folio</span><span class="p">(</span><span class="n">month</span><span class="o">=</span><span class="s2">&quot;March-2026&quot;</span><span class="p">,</span> <span class="n">as_df</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="c1"># flattens ageWiseAUM → classifications into flat rows</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="c1"># columns: schemeTypeName, ageGroup, noOfFolios, AUM</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="n">excel</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">aum</span><span class="o">.</span><span class="n">agewise_folio_excel</span><span class="p">(</span><span class="n">month</span><span class="o">=</span><span class="s2">&quot;March-2026&quot;</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># date: &quot;01-mon-yyyy&quot; — lowercase month, always day=01</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="c1"># List available months</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="n">dates</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">aum</span><span class="o">.</span><span class="n">classified_dates</span><span class="p">()</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="c1"># → [{&quot;date&quot;: &quot;April-2026&quot;}, {&quot;date&quot;: &quot;March-2026&quot;}, ...]</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="c1"># State-wise classified AUM</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="n">sw</span>    <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">aum</span><span class="o">.</span><span class="n">statewise</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="s2">&quot;01-apr-2026&quot;</span><span class="p">,</span> <span class="n">mf_id</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="n">sw_df</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">aum</span><span class="o">.</span><span class="n">statewise</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="s2">&quot;01-apr-2026&quot;</span><span class="p">,</span> <span class="n">as_df</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="n">excel</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">aum</span><span class="o">.</span><span class="n">statewise_excel</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="s2">&quot;01-apr-2026&quot;</span><span class="p">)</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="c1"># Scheme-category-wise classified AUM</span>
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="n">sc</span>    <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">aum</span><span class="o">.</span><span class="n">scheme_catwise</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="s2">&quot;01-apr-2026&quot;</span><span class="p">,</span> <span class="n">mf_id</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="n">sc_df</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">aum</span><span class="o">.</span><span class="n">scheme_catwise</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="s2">&quot;01-apr-2026&quot;</span><span class="p">,</span> <span class="n">as_df</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="n">excel</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">aum</span><span class="o">.</span><span class="n">scheme_catwise_excel</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="s2">&quot;01-apr-2026&quot;</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1"># date: &quot;DD-Mon-YYYY&quot;</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="n">bif</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">aum</span><span class="o">.</span><span class="n">bifurcation</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="s2">&quot;31-Mar-2026&quot;</span><span class="p">)</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="c1"># → [{&quot;Month_Date&quot;: &quot;31-Mar-2026&quot;,</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="c1">#     &quot;TotalAAUMunderDirectPlan&quot;: 3904766.42,</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="c1">#     &quot;AAUMunderRegisteredAdvisers&quot;: 537599.97,</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="c1">#     &quot;AAUMunderPMS&quot;: 89942.62,</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="c1">#     &quot;AAUMunderDIYclients&quot;: 3277223.84}]</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a><span class="n">bif_df</span>  <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">aum</span><span class="o">.</span><span class="n">bifurcation</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="s2">&quot;31-Mar-2026&quot;</span><span class="p">,</span> <span class="n">as_df</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="n">results</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">aum</span><span class="o">.</span><span class="n">bifurcation_range</span><span class="p">(</span><span class="n">dates</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;31-Mar-2026&quot;</span><span class="p">,</span> <span class="s2">&quot;28-Feb-2026&quot;</span><span class="p">,</span> <span class="s2">&quot;31-Jan-2026&quot;</span><span class="p">])</span>
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="n">excel</span>   <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">aum</span><span class="o">.</span><span class="n">bifurcation_excel</span><span class="p">(</span><span class="n">date</span><span class="o">=</span><span class="s2">&quot;31-Mar-2026&quot;</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="other-data">Other Data</h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:6"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><input id="__tabbed_2_4" name="__tabbed_2" type="radio" /><input id="__tabbed_2_5" name="__tabbed_2" type="radio" /><input id="__tabbed_2_6" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Investor Complaints</label><label for="__tabbed_2_2">Directors &amp; Trustees</label><label for="__tabbed_2_3">Group Companies</label><label for="__tabbed_2_4">Scheme Dividends</label><label for="__tabbed_2_5">Scheme Data &amp; Details</label><label for="__tabbed_2_6">AMC Accounts</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="c1"># Monthly — 4 parts (A–D), fetch each separately</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="c1"># month: &quot;MonthName-YYYY&quot;  |  part: 1=Part A (SEBI SCORES), 2=B, 3=C (ODR), 4=D</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="n">complaints</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">other_data</span><span class="o">.</span><span class="n">investor_complaints_monthly</span><span class="p">(</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>    <span class="n">month</span><span class="o">=</span><span class="s2">&quot;March-2026&quot;</span><span class="p">,</span> <span class="n">mf_id</span><span class="o">=</span><span class="mi">62</span><span class="p">,</span> <span class="n">part</span><span class="o">=</span><span class="mi">1</span>   <span class="c1"># mf_id=0 for all AMCs</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="p">)</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="n">df</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">other_data</span><span class="o">.</span><span class="n">investor_complaints_monthly</span><span class="p">(</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>    <span class="n">month</span><span class="o">=</span><span class="s2">&quot;March-2026&quot;</span><span class="p">,</span> <span class="n">mf_id</span><span class="o">=</span><span class="mi">62</span><span class="p">,</span> <span class="n">part</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">as_df</span><span class="o">=</span><span class="kc">True</span>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="p">)</span>
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a><span class="c1"># Yearly — &quot;YYYY-YYYY&quot;; historical only (up to FY 2020-21)</span>
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a><span class="n">yearly</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">other_data</span><span class="o">.</span><span class="n">investor_complaints_yearly</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="s2">&quot;2019-2020&quot;</span><span class="p">,</span> <span class="n">mf_id</span><span class="o">=</span><span class="mi">62</span><span class="p">)</span>
+<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a><span class="n">df</span>     <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">other_data</span><span class="o">.</span><span class="n">investor_complaints_yearly</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="s2">&quot;2019-2020&quot;</span><span class="p">,</span> <span class="n">as_df</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1"># AMC board directors</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="n">directors</span>    <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">other_data</span><span class="o">.</span><span class="n">amc_directors</span><span class="p">(</span><span class="n">mf_id</span><span class="o">=</span><span class="mi">62</span><span class="p">)</span>   <span class="c1"># single AMC</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="n">directors_df</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">other_data</span><span class="o">.</span><span class="n">amc_directors</span><span class="p">(</span><span class="n">mf_id</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">as_df</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># all AMCs</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="c1"># Trustees</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="n">trustees</span>    <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">other_data</span><span class="o">.</span><span class="n">trustees</span><span class="p">(</span><span class="n">mf_id</span><span class="o">=</span><span class="mi">62</span><span class="p">)</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="n">trustees_df</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">other_data</span><span class="o">.</span><span class="n">trustees</span><span class="p">(</span><span class="n">mf_id</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">as_df</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1"># One page (default 10 records)</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="n">page</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">other_data</span><span class="o">.</span><span class="n">group_companies</span><span class="p">(</span><span class="n">page</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="c1"># → {&quot;data&quot;: [...], &quot;pagination&quot;: {&quot;total&quot;: 599, ...}}</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="c1"># All ~599 records — auto-paginated</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="n">all_cos</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">other_data</span><span class="o">.</span><span class="n">group_companies_all</span><span class="p">()</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="n">all_df</span>  <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">other_data</span><span class="o">.</span><span class="n">group_companies_all</span><span class="p">(</span><span class="n">as_df</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c1"># Step 1 — get scheme list for an AMC</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="n">schemes</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">other_data</span><span class="o">.</span><span class="n">populate_schemes</span><span class="p">(</span><span class="n">mf_id</span><span class="o">=</span><span class="mi">62</span><span class="p">)</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="c1"># → [{&quot;scheme_id&quot;: &quot;13771&quot;, &quot;scheme_name&quot;: &quot;360 ONE Balanced Hybrid Fund&quot;}, ...]</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="c1"># Step 2 — fetch dividend history</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="n">divs</span>    <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">other_data</span><span class="o">.</span><span class="n">scheme_dividends</span><span class="p">(</span>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>              <span class="n">mf_id</span><span class="o">=</span><span class="mi">62</span><span class="p">,</span> <span class="n">sd_id</span><span class="o">=</span><span class="n">schemes</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;scheme_id&quot;</span><span class="p">],</span> <span class="n">year</span><span class="o">=</span><span class="mi">2026</span>
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>          <span class="p">)</span>
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="n">divs_df</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">other_data</span><span class="o">.</span><span class="n">scheme_dividends</span><span class="p">(</span>
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>              <span class="n">mf_id</span><span class="o">=</span><span class="mi">62</span><span class="p">,</span> <span class="n">sd_id</span><span class="o">=</span><span class="n">schemes</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;scheme_id&quot;</span><span class="p">],</span> <span class="n">year</span><span class="o">=</span><span class="mi">2026</span><span class="p">,</span> <span class="n">as_df</span><span class="o">=</span><span class="kc">True</span>
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>          <span class="p">)</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">schemes</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">other_data</span><span class="o">.</span><span class="n">populate_schemes</span><span class="p">(</span><span class="n">mf_id</span><span class="o">=</span><span class="mi">62</span><span class="p">)</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="n">sd_id</span>   <span class="o">=</span> <span class="n">schemes</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;scheme_id&quot;</span><span class="p">]</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="c1"># NAV for all plan/option variants (Direct Growth, Regular IDCW, etc.)</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="n">nav_rows</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">other_data</span><span class="o">.</span><span class="n">scheme_data</span><span class="p">(</span><span class="n">mf_id</span><span class="o">=</span><span class="mi">62</span><span class="p">,</span> <span class="n">sd_id</span><span class="o">=</span><span class="n">sd_id</span><span class="p">)</span>
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="c1"># → [{&quot;Scheme_NAV_Name&quot;: &quot;...&quot;, &quot;ISIN_Div_Payout_ISIN_Growth&quot;: &quot;INF...&quot;,</span>
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="c1">#     &quot;Net_Asset_Value&quot;: &quot;13.32&quot;, &quot;Date&quot;: &quot;2026-05-08T00:00:00&quot;, ...}, ...]</span>
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="n">nav_df</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">other_data</span><span class="o">.</span><span class="n">scheme_data</span><span class="p">(</span><span class="n">mf_id</span><span class="o">=</span><span class="mi">62</span><span class="p">,</span> <span class="n">sd_id</span><span class="o">=</span><span class="n">sd_id</span><span class="p">,</span> <span class="n">as_df</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>
+<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="c1"># Full scheme profile — returns a single dict, no as_df option</span>
+<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="n">info</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">other_data</span><span class="o">.</span><span class="n">scheme_details</span><span class="p">(</span><span class="n">mf_id</span><span class="o">=</span><span class="mi">62</span><span class="p">,</span> <span class="n">sd_id</span><span class="o">=</span><span class="n">sd_id</span><span class="p">)</span>
+<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a><span class="c1"># → {&quot;Scheme_Name&quot;: &quot;...&quot;, &quot;Scheme_Objective&quot;: &quot;...&quot;,</span>
+<a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a><span class="c1">#    &quot;SchemeType_Desc&quot;: &quot;Open Ended&quot;, &quot;SchemeCat_Desc&quot;: &quot;Hybrid Scheme&quot;,</span>
+<a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a><span class="c1">#    &quot;Scheme_min_amt&quot;: &quot;1000&quot;, &quot;Launch_Date&quot;: &quot;...&quot;,</span>
+<a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a><span class="c1">#    &quot;Scheme_load&quot;: &quot;Nil&quot;, &quot;AMC_Website&quot;: &quot;https://...&quot;}</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="c1"># Returns URL references to external PDF statements (not raw financials)</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="n">ann_links</span>  <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">other_data</span><span class="o">.</span><span class="n">accounts_annual</span><span class="p">(</span><span class="n">mf_id</span><span class="o">=</span><span class="mi">62</span><span class="p">)</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="n">half_links</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">other_data</span><span class="o">.</span><span class="n">accounts_half_yearly</span><span class="p">(</span><span class="n">mf_id</span><span class="o">=</span><span class="mi">62</span><span class="p">)</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<hr />
+<h2 id="research-categorisation-of-stocks">Research — Categorisation of Stocks</h2>
+<p>SEBI's average market capitalisation reference list — published bi-annually (Jan–Jun, Jul–Dec) from 2017 onwards.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="c1"># Dict keyed by year, each value a list of period entries</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="n">data</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">research</span><span class="o">.</span><span class="n">categorisation_of_stocks</span><span class="p">()</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="c1"># → {&quot;2024&quot;: [{&quot;period&quot;: &quot;Jul - Dec&quot;, &quot;pdfUrl&quot;: &quot;...&quot;, &quot;excelUrl&quot;: &quot;...&quot;}, ...], &quot;2023&quot;: [...], ...}</span>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="c1"># Flat list sorted oldest → newest</span>
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="n">flat</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">research</span><span class="o">.</span><span class="n">categorisation_of_stocks_flat</span><span class="p">()</span>
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="c1"># → [{&quot;year&quot;: &quot;2017&quot;, &quot;period&quot;: &quot;Jul - Dec&quot;, &quot;pdfUrl&quot;: &quot;...&quot;, &quot;excelUrl&quot;: &quot;...&quot;}, ...]</span>
+<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>
+<a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a><span class="c1"># Polars DataFrame (columns: year, period, pdfUrl, excelUrl)</span>
+<a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a><span class="n">df</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">research</span><span class="o">.</span><span class="n">categorisation_of_stocks</span><span class="p">(</span><span class="n">as_df</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a>
+<a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a><span class="c1"># Download a file (PDF or Excel) — raw bytes</span>
+<a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a><span class="n">latest</span> <span class="o">=</span> <span class="n">flat</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a><span class="n">excel</span>  <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">research</span><span class="o">.</span><span class="n">download_categorisation_file</span><span class="p">(</span><span class="n">latest</span><span class="p">[</span><span class="s2">&quot;excelUrl&quot;</span><span class="p">])</span>
+<a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;categ_latest.xlsx&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">excel</span><span class="p">)</span>
+<a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a>
+<a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a><span class="n">pdf</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">research</span><span class="o">.</span><span class="n">download_categorisation_file</span><span class="p">(</span><span class="n">latest</span><span class="p">[</span><span class="s2">&quot;pdfUrl&quot;</span><span class="p">])</span>
+<a id="__codelineno-21-18" name="__codelineno-21-18" href="#__codelineno-21-18"></a><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;categ_latest.pdf&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">pdf</span><span class="p">)</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.top", "toc.follow", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

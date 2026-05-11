@@ -4,6 +4,9 @@ Python client for **AMFI India** — the Association of Mutual Funds in India.
 
 Provides clean, typed access to NAV data, TER (Total Expense Ratio), Fund Performance, Tracking Error, Risk Parameters, New Fund Offers, AMFI publications, and more. Both **sync** and **async** interfaces are included.
 
+📖 **[Full documentation → skamalj.github.io/amfipy](https://skamalj.github.io/amfipy/)**  
+&nbsp;&nbsp;&nbsp;&nbsp;[Quick Start & User Guide](https://skamalj.github.io/amfipy/) · [API Reference](https://skamalj.github.io/amfipy/api/) · [Data Dictionary](https://skamalj.github.io/amfipy/data/)
+
 ## Data Coverage
 
 | Data | Client method | Excel / file | `as_df=True` | Notes |

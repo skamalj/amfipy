@@ -5,11 +5,11 @@ Clean, typed access to NAV, TER, AUM, Fund Performance, Tracking Error, Risk Par
 
 | Section | Description |
 |---|---|
-| 🚀 [**Quick Start**](quickstart.md) | Install the library and go from zero to your first data pull in five minutes |
-| 📖 [**User Guide**](userguide.md) | Sync vs async, polars DataFrames, Excel downloads, batch fetching, date formats, AMC IDs, Spark / Iceberg |
-| 💻 [**Module Examples**](modules.md) | Copy-paste examples for every module — NAV, TER, AUM, Tracking, Risk, NFO, Publications, and more |
-| 🔌 [**API Reference**](api/index.md) | Full parameter reference auto-generated from source docstrings |
-| 📋 [**Data Dictionary**](data/index.md) | Field-level schema for every dataset, linked back to the API |
+| [**Quick Start**](quickstart.md) | Install the library and go from zero to your first data pull in five minutes |
+| [**User Guide**](userguide.md) | Sync vs async, polars DataFrames, Excel downloads, batch fetching, date formats, AMC IDs, Spark / Iceberg |
+| [**Module Examples**](modules.md) | Copy-paste examples for every module — NAV, TER, AUM, Tracking, Risk, NFO, Publications, and more |
+| [**API Reference**](api/index.md) | Full parameter reference auto-generated from source docstrings |
+| [**Data Dictionary**](data/index.md) | Field-level schema for every dataset, linked back to the API |
 
 ---
 

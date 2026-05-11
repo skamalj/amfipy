@@ -59,7 +59,11 @@ markdown_extensions:
   - md_in_html
 
 nav:
-  - Home: index.md
+  - Home:
+    - index.md
+    - Quick Start: quickstart.md
+    - User Guide: userguide.md
+    - Module Examples: modules.md
   - API Reference:
     - api/index.md
     - NAV: api/nav.md

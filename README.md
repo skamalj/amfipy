@@ -4,6 +4,49 @@ Python client for **AMFI India** — the Association of Mutual Funds in India.
 
 Provides clean, typed access to NAV data, TER (Total Expense Ratio), Fund Performance, Tracking Error, Risk Parameters, New Fund Offers, AMFI publications, and more. Both **sync** and **async** interfaces are included.
 
+## Data Coverage
+
+| Data | Client method | Excel / file | `as_df=True` | Notes |
+|---|---|:---:|:---:|---|
+| **NAV — Latest** | `client.nav.latest()` | — | — | Nested by fund type → category → scheme |
+| **NAV — Latest by category** | `client.nav.latest_by_category()` | — | — | Category-level summary |
+| **NAV — All schemes for date** | `client.nav.all_navs_for_date()` | — | ✅ | One row per scheme |
+| **NAV — History** | `client.nav.history()` | — | ✅ | `as_df` auto-flattens nested `nav_groups` |
+| **NAV — High / Low** | `client.nav.high_low()` | — | ✅ | `period_type`: Month \| Annual |
+| **NAV — Compare two dates** | `client.nav.compare()` | — | ✅ | |
+| **NAV — Flat file** | `client.nav.download_file()` | ✅ (txt) | — | Full NAVAll.txt for any date; raw bytes |
+| **TER — MF schemes** | `client.ter.fetch()` / `download_excel()` | ✅ xlsx | ✅ | Excel = single sheet; JSON = flat list |
+| **TER — SIF schemes** | `client.sif_ter.fetch()` / `download_excel()` | ✅ xlsx | ✅ | Same interface as TER; uses `sif_id` |
+| **Fund Performance** | `client.fund_performance.fetch()` | — | — | No server-side Excel (client-side only) |
+| **Tracking Error** | `client.tracking.error()` | — | ✅ | Includes Benchmark column per scheme |
+| **Tracking Difference** | `client.tracking.difference()` | — | ✅ | |
+| **Risk Parameters** | `client.risk_parameters.fetch()` | — | ✅ | Std dev, beta, Sharpe; requires `category_id` |
+| **NFO** | `client.nfo.fetch()` | — | ✅ | `as_df` flattens AMC-grouped structure |
+| **Publications — Monthly** | `client.publications.monthly_flat()` + `download_file(url)` | ✅ xls | — | Returns metadata + URLs; xls has multiple data sheets |
+| **Publications — Quarterly** | `client.publications.quarterly_flat()` + `download_file(url)` | ✅ xls | — | Returns metadata + URLs |
+| **Publications — Commission** | `client.publications.commission()` + `download_file(url)` | ✅ pdf | — | Annual commission disclosure PDFs |
+| **CDMDF NAV** | `client.cdmdf.history()` | — | ✅ | Corporate Debt Market Dev Fund NAV |
+| **AUM — Average (fund-wise)** | `client.aum.average_aum_fundwise()` / `_excel()` | ✅ xlsx | ✅ | Quarterly; one row per AMC |
+| **AUM — Average (scheme-wise)** | `client.aum.average_aum_schemewise()` / `_excel()` | ✅ xlsx | ✅ | `str_type`: Categorywise \| Typewise |
+| **AUM — Disclosure by category** | `client.aum.disclosure_by_category()` | ✅ (URL in data) | ✅ | Quarterly; each record has `pdfURL`/`excelURL` |
+| **AUM — Disclosure by geography** | `client.aum.disclosure_by_geography()` | ✅ (URL in data) | ✅ | Quarterly |
+| **AUM — Age-wise / Folio** | `client.aum.agewise_folio()` / `_excel()` | ✅ xlsx | ✅ | `as_df` flattens nested scheme-type + age-band rows |
+| **AUM — State-wise classified** | `client.aum.statewise()` / `_excel()` | ✅ xlsx | ✅ | |
+| **AUM — Scheme-category-wise** | `client.aum.scheme_catwise()` / `_excel()` | ✅ xlsx | ✅ | |
+| **AUM — Bifurcation (Direct Plan)** | `client.aum.bifurcation()` / `_excel()` | ✅ xlsx | ✅ | Direct vs adviser vs PMS vs DIY split |
+| **Investor Complaints — Monthly** | `client.other_data.investor_complaints_monthly()` | — | ✅ | 4 parts (A–D); fetch each separately |
+| **Investor Complaints — Yearly** | `client.other_data.investor_complaints_yearly()` | — | ✅ | Historical data up to FY 2021 |
+| **AMC Directors** | `client.other_data.amc_directors()` | — | ✅ | |
+| **Trustees** | `client.other_data.trustees()` | — | ✅ | |
+| **Group Companies** | `client.other_data.group_companies_all()` | — | ✅ | ~599 records; auto-paginated |
+| **Scheme Dividends** | `client.other_data.scheme_dividends()` | — | ✅ | Call `populate_schemes()` first to get `scheme_id` |
+| **Scheme NAV variants** | `client.other_data.scheme_data()` | — | ✅ | One row per plan/option (ISIN, price, date) |
+| **Scheme Profile** | `client.other_data.scheme_details()` | — | — | Returns single dict: objective, load, min amt, etc. |
+| **Categorisation of Stocks** | `client.research.categorisation_of_stocks()` + `download_categorisation_file(url)` | ✅ xlsx + pdf | ✅ | Bi-annual avg market cap data from 2017; `as_df` = flat year/period rows |
+
+> **Excel / file** — `✅` means raw bytes are returned (save with `.write_bytes()`).  
+> **`as_df=True`** — requires `pip install amfipy[polars]`. Convert to Spark with `.to_arrow()`.
+
 ## Features
 
 - **Sync + Async** — `AMFIClient` and `AsyncAMFIClient` with identical APIs

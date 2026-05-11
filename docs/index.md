@@ -3,39 +3,13 @@
 Python client for **AMFI India** — the Association of Mutual Funds in India.  
 Clean, typed access to NAV, TER, AUM, Fund Performance, Tracking Error, Risk Parameters, NFOs, Publications, and more.  Both **sync** and **async** interfaces are included.
 
-<div class="grid cards" markdown>
-
--   :material-rocket-launch: **[Quick Start](quickstart.md)**
-
-    ---
-
-    Install the library and go from zero to your first data pull in five minutes.
-
--   :material-book-open-variant: **[User Guide](userguide.md)**
-
-    ---
-
-    Sync vs async, polars DataFrames, Excel downloads, batch fetching, date formats, AMC IDs, Spark / Iceberg integration.
-
--   :material-code-tags: **[Module Examples](modules.md)**
-
-    ---
-
-    Copy-paste examples for every module — NAV, TER, AUM, Tracking, Risk, NFO, Publications, Other Data, and more.
-
--   :material-api: **[API Reference](api/index.md)**
-
-    ---
-
-    Full parameter reference auto-generated from source docstrings.
-
--   :material-table: **[Data Dictionary](data/index.md)**
-
-    ---
-
-    Field-level schema for every dataset — field names, types, and descriptions linked back to the API.
-
-</div>
+| Section | Description |
+|---|---|
+| 🚀 [**Quick Start**](quickstart.md) | Install the library and go from zero to your first data pull in five minutes |
+| 📖 [**User Guide**](userguide.md) | Sync vs async, polars DataFrames, Excel downloads, batch fetching, date formats, AMC IDs, Spark / Iceberg |
+| 💻 [**Module Examples**](modules.md) | Copy-paste examples for every module — NAV, TER, AUM, Tracking, Risk, NFO, Publications, and more |
+| 🔌 [**API Reference**](api/index.md) | Full parameter reference auto-generated from source docstrings |
+| 📋 [**Data Dictionary**](data/index.md) | Field-level schema for every dataset, linked back to the API |
 
 ---
 

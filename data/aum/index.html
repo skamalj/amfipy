@@ -1,0 +1,2082 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Python client for AMFI India — NAV, TER, AUM, Tracking Error and more">
+      
+      
+      
+        <link rel="canonical" href="https://skamalj.github.io/amfipy/data/aum/">
+      
+      
+        <link rel="prev" href="../cdmdf/">
+      
+      
+        <link rel="next" href="../other_data/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>AUM - amfipy</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#aum-data-dictionary" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="amfipy" class="md-header__button md-logo" aria-label="amfipy" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            amfipy
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              AUM
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/skamalj/amfipy" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    skamalj/amfipy
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../api/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  API Reference
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Data Dictionary
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="amfipy" class="md-nav__button md-logo" aria-label="amfipy" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    amfipy
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/skamalj/amfipy" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    skamalj/amfipy
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../api/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Reference
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/nav/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NAV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/ter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TER (MF)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/sif_ter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TER (SIF)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/fund_performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fund Performance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tracking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/risk_parameters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Risk Parameters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/nfo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NFO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Publications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/cdmdf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CDMDF NAV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/aum/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AUM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/other_data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Other Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/research/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Research
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Dictionary
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data Dictionary
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nav/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NAV Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ter/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TER Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fund_performance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fund Performance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tracking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../risk_parameters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Risk Parameters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nfo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NFO
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../publications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Publications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cdmdf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CDMDF NAV
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AUM
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AUM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-average-aum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Average AUM
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Average AUM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#financial_years-available-financial-years" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        financial_years() — Available financial years
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#periods-quarters-within-a-financial-year" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        periods() — Quarters within a financial year
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#average_aum_fundwise-fund-wise-average-aum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        average_aum_fundwise() — Fund-wise Average AUM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#average_aum_schemewise-scheme-wise-average-aum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        average_aum_schemewise() — Scheme-wise Average AUM
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-aumaaum-disclosure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. AUM–AAUM Disclosure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. AUM–AAUM Disclosure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#disclosure_by_category-disclosure_by_geography-quarterly-disclosure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        disclosure_by_category() / disclosure_by_geography() — Quarterly disclosure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-age-wise-folio-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Age-wise / Folio Data
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Age-wise / Folio Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#agewise_folio-flat-dataframe-as_dftrue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        agewise_folio() — Flat DataFrame (as_df=True)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-classified-average-aum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Classified Average AUM
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Classified Average AUM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#statewise-state-wise-aum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        statewise() — State-wise AUM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scheme_catwise-scheme-category-wise-aum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scheme_catwise() — Scheme-category-wise AUM
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-bifurcation-of-aum-direct-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Bifurcation of AUM (Direct Plan)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Bifurcation of AUM (Direct Plan)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bifurcation-direct-plan-aum-split" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        bifurcation() — Direct Plan AUM split
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../other_data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Other Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../research/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Research
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-average-aum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Average AUM
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Average AUM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#financial_years-available-financial-years" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        financial_years() — Available financial years
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#periods-quarters-within-a-financial-year" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        periods() — Quarters within a financial year
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#average_aum_fundwise-fund-wise-average-aum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        average_aum_fundwise() — Fund-wise Average AUM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#average_aum_schemewise-scheme-wise-average-aum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        average_aum_schemewise() — Scheme-wise Average AUM
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-aumaaum-disclosure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. AUM–AAUM Disclosure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. AUM–AAUM Disclosure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#disclosure_by_category-disclosure_by_geography-quarterly-disclosure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        disclosure_by_category() / disclosure_by_geography() — Quarterly disclosure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-age-wise-folio-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Age-wise / Folio Data
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Age-wise / Folio Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#agewise_folio-flat-dataframe-as_dftrue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        agewise_folio() — Flat DataFrame (as_df=True)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-classified-average-aum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Classified Average AUM
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Classified Average AUM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#statewise-state-wise-aum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        statewise() — State-wise AUM
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scheme_catwise-scheme-category-wise-aum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scheme_catwise() — Scheme-category-wise AUM
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-bifurcation-of-aum-direct-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Bifurcation of AUM (Direct Plan)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Bifurcation of AUM (Direct Plan)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bifurcation-direct-plan-aum-split" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        bifurcation() — Direct Plan AUM split
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="aum-data-dictionary">AUM Data Dictionary</h1>
+<blockquote>
+<p><strong>API reference:</strong> <a href="../../api/aum/"><code>client.aum</code></a></p>
+</blockquote>
+<p>Five sub-modules — each section below corresponds to one AMFI AUM page.</p>
+<hr />
+<h2 id="1-average-aum">1. Average AUM</h2>
+<h3 id="financial_years-available-financial-years"><code>financial_years()</code> — Available financial years</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>int</code></td>
+<td><code>1</code></td>
+<td>Use as <code>fy_id</code> in <code>periods()</code> and data calls</td>
+</tr>
+<tr>
+<td><code>financial_year</code></td>
+<td><code>str</code></td>
+<td><code>"April 2025 - March 2026"</code></td>
+<td>Human-readable label</td>
+</tr>
+</tbody>
+</table>
+<h3 id="periods-quarters-within-a-financial-year"><code>periods()</code> — Quarters within a financial year</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>financial_year</code></td>
+<td><code>str</code></td>
+<td><code>"April 2025 - March 2026"</code></td>
+<td>Financial year label</td>
+</tr>
+<tr>
+<td><code>periods</code></td>
+<td><code>list</code></td>
+<td><code>[{...}]</code></td>
+<td>List of quarter records</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Each <code>periods</code> entry</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>int</code></td>
+<td><code>1</code></td>
+<td>Use as <code>period_id</code> in data calls</td>
+</tr>
+<tr>
+<td><code>period</code></td>
+<td><code>str</code></td>
+<td><code>"January - March 2026"</code></td>
+<td>Quarter label</td>
+</tr>
+</tbody>
+</table>
+<h3 id="average_aum_fundwise-fund-wise-average-aum"><code>average_aum_fundwise()</code> — Fund-wise Average AUM</h3>
+<p>One row per AMC.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Sr_No</code></td>
+<td><code>str</code></td>
+<td><code>"1"</code></td>
+<td>Serial number</td>
+</tr>
+<tr>
+<td><code>MutualFundName</code></td>
+<td><code>str</code></td>
+<td><code>"Aditya Birla Sun Life Mutual Fund"</code></td>
+<td>AMC name</td>
+</tr>
+<tr>
+<td><code>averageAUM</code></td>
+<td><code>dict</code></td>
+<td><code>{"Equity":12345.67,...}</code></td>
+<td>AUM by scheme category (₹ crore)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="average_aum_schemewise-scheme-wise-average-aum"><code>average_aum_schemewise()</code> — Scheme-wise Average AUM</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Category</code></td>
+<td><code>str</code></td>
+<td><code>"Equity Scheme"</code></td>
+<td>SEBI scheme category</td>
+</tr>
+<tr>
+<td><code>Sub_Category</code></td>
+<td><code>str</code></td>
+<td><code>"Flexi Cap Fund"</code></td>
+<td>SEBI sub-category</td>
+</tr>
+<tr>
+<td><code>MF_Name</code></td>
+<td><code>str</code></td>
+<td><code>"HDFC Mutual Fund"</code></td>
+<td>AMC name (when filtered by <code>mf_id</code>)</td>
+</tr>
+<tr>
+<td><code>Scheme_Name</code></td>
+<td><code>str</code></td>
+<td><code>"HDFC Flexi Cap Fund - Direct - Growth"</code></td>
+<td>Scheme name</td>
+</tr>
+<tr>
+<td><code>AAUM</code></td>
+<td><code>str</code></td>
+<td><code>"28456.32"</code></td>
+<td>Average AUM for the quarter (₹ crore)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2-aumaaum-disclosure">2. AUM–AAUM Disclosure</h2>
+<h3 id="disclosure_by_category-disclosure_by_geography-quarterly-disclosure"><code>disclosure_by_category()</code> / <code>disclosure_by_geography()</code> — Quarterly disclosure</h3>
+<p>Each record provides a quarter's AUM disclosure file links.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Period</code></td>
+<td><code>str</code></td>
+<td><code>"October - December 2025"</code></td>
+<td>Quarter label</td>
+</tr>
+<tr>
+<td><code>pdfURL</code></td>
+<td><code>str</code></td>
+<td><code>"https://..."</code></td>
+<td>PDF disclosure file URL</td>
+</tr>
+<tr>
+<td><code>excelURL</code></td>
+<td><code>str</code></td>
+<td><code>"https://..."</code></td>
+<td>Excel disclosure file URL</td>
+</tr>
+</tbody>
+</table>
+<p>Download with <code>client.publications.download_file(url)</code> or <code>httpx.get(url).content</code>.</p>
+<hr />
+<h2 id="3-age-wise-folio-data">3. Age-wise / Folio Data</h2>
+<h3 id="agewise_folio-flat-dataframe-as_dftrue"><code>agewise_folio()</code> — Flat DataFrame (<code>as_df=True</code>)</h3>
+<p><code>as_df=True</code> flattens the nested <code>ageWiseAUM → classifications</code> structure.</p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>schemeTypeName</code></td>
+<td><code>str</code></td>
+<td><code>"Open Ended"</code></td>
+<td>Scheme type (outer grouping)</td>
+</tr>
+<tr>
+<td><code>ageGroup</code></td>
+<td><code>str</code></td>
+<td><code>"18-30"</code></td>
+<td>Investor age band</td>
+</tr>
+<tr>
+<td><code>noOfFolios</code></td>
+<td><code>str</code></td>
+<td><code>"1234567"</code></td>
+<td>Number of folios in this age group</td>
+</tr>
+<tr>
+<td><code>AUM</code></td>
+<td><code>str</code></td>
+<td><code>"45678.90"</code></td>
+<td>AUM for this age group (₹ crore)</td>
+</tr>
+</tbody>
+</table>
+<p>Raw response (<code>as_df=False</code>) also contains <code>investorClassification</code> — investor type breakdown (Individuals, NRI, HUF, etc.).</p>
+<hr />
+<h2 id="4-classified-average-aum">4. Classified Average AUM</h2>
+<h3 id="statewise-state-wise-aum"><code>statewise()</code> — State-wise AUM</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>State</code></td>
+<td><code>str</code></td>
+<td><code>"Maharashtra"</code></td>
+<td>State name</td>
+</tr>
+<tr>
+<td><code>B30Cities</code></td>
+<td><code>str</code></td>
+<td><code>"12345.67"</code></td>
+<td>AUM from Beyond 30 cities (₹ crore)</td>
+</tr>
+<tr>
+<td><code>T30Cities</code></td>
+<td><code>str</code></td>
+<td><code>"98765.43"</code></td>
+<td>AUM from Top 30 cities (₹ crore)</td>
+</tr>
+<tr>
+<td><code>Total</code></td>
+<td><code>str</code></td>
+<td><code>"111111.10"</code></td>
+<td>Total AUM for the state (₹ crore)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="scheme_catwise-scheme-category-wise-aum"><code>scheme_catwise()</code> — Scheme-category-wise AUM</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Category</code></td>
+<td><code>str</code></td>
+<td><code>"Equity Scheme"</code></td>
+<td>SEBI scheme category</td>
+</tr>
+<tr>
+<td><code>T30</code></td>
+<td><code>str</code></td>
+<td><code>"456789.12"</code></td>
+<td>Top 30 cities AUM (₹ crore)</td>
+</tr>
+<tr>
+<td><code>B30</code></td>
+<td><code>str</code></td>
+<td><code>"23456.78"</code></td>
+<td>Beyond 30 cities AUM (₹ crore)</td>
+</tr>
+<tr>
+<td><code>Total</code></td>
+<td><code>str</code></td>
+<td><code>"480245.90"</code></td>
+<td>Total AUM (₹ crore)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Date format:</strong> <code>"01-mon-yyyy"</code> — lowercase month, always day=01. E.g. <code>"01-apr-2026"</code>.</p>
+<hr />
+<h2 id="5-bifurcation-of-aum-direct-plan">5. Bifurcation of AUM (Direct Plan)</h2>
+<h3 id="bifurcation-direct-plan-aum-split"><code>bifurcation()</code> — Direct Plan AUM split</h3>
+<p>One record per date requested.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Month_Date</code></td>
+<td><code>str</code></td>
+<td><code>"31-Mar-2026"</code></td>
+<td>Month-end date</td>
+</tr>
+<tr>
+<td><code>TotalAAUMunderDirectPlan</code></td>
+<td><code>str</code></td>
+<td><code>"987654.32"</code></td>
+<td>Total Average AUM under Direct Plans (₹ crore)</td>
+</tr>
+<tr>
+<td><code>AAUMunderRegisteredAdvisers</code></td>
+<td><code>str</code></td>
+<td><code>"456789.10"</code></td>
+<td>Portion managed via SEBI-registered advisers</td>
+</tr>
+<tr>
+<td><code>AAUMunderPMS</code></td>
+<td><code>str</code></td>
+<td><code>"234567.89"</code></td>
+<td>Portion managed via Portfolio Management Services</td>
+</tr>
+<tr>
+<td><code>AAUMunderDIYclients</code></td>
+<td><code>str</code></td>
+<td><code>"296297.33"</code></td>
+<td>Portion invested directly by retail clients (DIY)</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.indexes", "navigation.top", "toc.follow", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

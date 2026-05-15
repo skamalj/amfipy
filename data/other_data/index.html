@@ -2198,20 +2198,38 @@
 <tr>
 <td><code>Repurchase_Price</code></td>
 <td><code>str</code></td>
-<td><code>"13.32"</code></td>
-<td>Repurchase / redemption price (₹)</td>
+<td><code>""</code></td>
+<td>Repurchase price (₹); often empty — use <code>Net_Asset_Value</code></td>
 </tr>
 <tr>
-<td><code>Sale_Price</code></td>
+<td><code>Sales_Price</code></td>
 <td><code>str</code></td>
-<td><code>"13.32"</code></td>
-<td>Sale price (₹)</td>
+<td><code>""</code></td>
+<td>Sale price (₹); often empty — use <code>Net_Asset_Value</code></td>
 </tr>
 <tr>
 <td><code>Date</code></td>
 <td><code>str</code></td>
-<td><code>"2026-05-08T00:00:00"</code></td>
+<td><code>"2026-05-14T00:00:00.000Z"</code></td>
 <td>NAV date (ISO 8601 datetime string)</td>
+</tr>
+<tr>
+<td><code>strMFId</code></td>
+<td><code>int</code></td>
+<td><code>62</code></td>
+<td>AMC ID echoed from request</td>
+</tr>
+<tr>
+<td><code>strSDId</code></td>
+<td><code>int</code></td>
+<td><code>13771</code></td>
+<td>Scheme ID echoed from request</td>
+</tr>
+<tr>
+<td><code>strOption</code></td>
+<td><code>str</code></td>
+<td><code>"NAV"</code></td>
+<td>Option echoed from request</td>
 </tr>
 </tbody>
 </table>
@@ -2254,20 +2272,20 @@
 <tr>
 <td><code>SchemeCat_Desc</code></td>
 <td><code>str</code></td>
-<td><code>"Hybrid Scheme"</code></td>
-<td>SEBI scheme category</td>
+<td><code>"Hybrid Scheme - Balanced Hybrid Fund"</code></td>
+<td>SEBI category — includes sub-category</td>
 </tr>
 <tr>
 <td><code>Launch_Date</code></td>
 <td><code>str</code></td>
-<td><code>"05-Jan-2016"</code></td>
-<td>Scheme launch date</td>
+<td><code>"2023-09-04T00:00:00+05:30"</code></td>
+<td>Scheme launch date (ISO 8601)</td>
 </tr>
 <tr>
 <td><code>Scheme_load</code></td>
 <td><code>str</code></td>
-<td><code>"Nil"</code></td>
-<td>Exit load description</td>
+<td><code>"Entry Load: Not Applicable\nExit Load: ..."</code></td>
+<td>Load structure (multi-line text)</td>
 </tr>
 <tr>
 <td><code>Scheme_min_amt</code></td>
@@ -2280,6 +2298,18 @@
 <td><code>str</code></td>
 <td><code>"https://www.360one.in"</code></td>
 <td>AMC website URL</td>
+</tr>
+<tr>
+<td><code>scheme_Id</code></td>
+<td><code>int</code></td>
+<td><code>13771</code></td>
+<td>Scheme ID echoed from request</td>
+</tr>
+<tr>
+<td><code>MF_Id</code></td>
+<td><code>int</code></td>
+<td><code>62</code></td>
+<td>AMC ID echoed from request</td>
 </tr>
 </tbody>
 </table>

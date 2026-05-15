@@ -113,9 +113,12 @@ One row per plan/option (Direct Growth, Regular IDCW, etc.).
 | `ISIN_Div_Payout_ISIN_Growth` | `str` | `"INF200K01VC5"` | Primary ISIN (growth or dividend payout) |
 | `ISIN_Div_Reinvestment` | `str` | `"-"` | Dividend reinvestment ISIN; `-` if not applicable |
 | `Net_Asset_Value` | `str` | `"13.32"` | Latest NAV (₹) |
-| `Repurchase_Price` | `str` | `"13.32"` | Repurchase / redemption price (₹) |
-| `Sale_Price` | `str` | `"13.32"` | Sale price (₹) |
-| `Date` | `str` | `"2026-05-08T00:00:00"` | NAV date (ISO 8601 datetime string) |
+| `Repurchase_Price` | `str` | `""` | Repurchase price (₹); often empty — use `Net_Asset_Value` |
+| `Sales_Price` | `str` | `""` | Sale price (₹); often empty — use `Net_Asset_Value` |
+| `Date` | `str` | `"2026-05-14T00:00:00.000Z"` | NAV date (ISO 8601 datetime string) |
+| `strMFId` | `int` | `62` | AMC ID echoed from request |
+| `strSDId` | `int` | `13771` | Scheme ID echoed from request |
+| `strOption` | `str` | `"NAV"` | Option echoed from request |
 
 ### `scheme_details()` — Full scheme profile
 
@@ -127,11 +130,13 @@ Returns a single `dict` (not a list) with the scheme's static profile.
 | `Scheme_Name` | `str` | `"360 ONE Balanced Hybrid Fund"` | Scheme name |
 | `Scheme_Objective` | `str` | `"The scheme seeks to generate..."` | Investment objective (long text) |
 | `SchemeType_Desc` | `str` | `"Open Ended"` | Open Ended / Close Ended |
-| `SchemeCat_Desc` | `str` | `"Hybrid Scheme"` | SEBI scheme category |
-| `Launch_Date` | `str` | `"05-Jan-2016"` | Scheme launch date |
-| `Scheme_load` | `str` | `"Nil"` | Exit load description |
+| `SchemeCat_Desc` | `str` | `"Hybrid Scheme - Balanced Hybrid Fund"` | SEBI category — includes sub-category |
+| `Launch_Date` | `str` | `"2023-09-04T00:00:00+05:30"` | Scheme launch date (ISO 8601) |
+| `Scheme_load` | `str` | `"Entry Load: Not Applicable\nExit Load: ..."` | Load structure (multi-line text) |
 | `Scheme_min_amt` | `str` | `"1000"` | Minimum investment amount (₹) |
 | `AMC_Website` | `str` | `"https://www.360one.in"` | AMC website URL |
+| `scheme_Id` | `int` | `13771` | Scheme ID echoed from request |
+| `MF_Id` | `int` | `62` | AMC ID echoed from request |
 
 ---
 

@@ -14,6 +14,15 @@ def test_latest_single_amc(client):
     assert isinstance(data, dict)
 
 
+def test_latest_as_df(client):
+    polars = pytest.importorskip("polars")
+    df = client.nav.latest(mf_id=MF_ID, as_df=True)
+    assert isinstance(df, polars.DataFrame)
+    assert len(df) > 0
+    assert "schemeName" in df.columns
+    assert "netAssetValue" in df.columns
+
+
 def test_latest_by_category(client):
     data = client.nav.latest_by_category(mf_id="all")
     assert isinstance(data, (dict, list))
@@ -78,6 +87,14 @@ def test_download_file(client):
 async def test_async_latest(async_client):
     data = await async_client.nav.latest()
     assert isinstance(data, dict)
+
+
+@pytest.mark.asyncio
+async def test_async_latest_as_df(async_client):
+    polars = pytest.importorskip("polars")
+    df = await async_client.nav.latest(mf_id=MF_ID, as_df=True)
+    assert isinstance(df, polars.DataFrame)
+    assert len(df) > 0
 
 
 @pytest.mark.asyncio

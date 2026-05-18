@@ -11,7 +11,7 @@ Provides clean, typed access to NAV data, TER (Total Expense Ratio), Fund Perfor
 
 | Data | Client method | Excel / file | `as_df=True` | Notes |
 |---|---|:---:|:---:|---|
-| **NAV — Latest** | `client.nav.latest()` | — | — | Nested by fund type → category → scheme |
+| **NAV — Latest** | `client.nav.latest()` | — | ✅ | `as_df` flattens nested type → category → scheme |
 | **NAV — Latest by category** | `client.nav.latest_by_category()` | — | — | Category-level summary |
 | **NAV — All schemes for date** | `client.nav.all_navs_for_date()` | — | ✅ | One row per scheme |
 | **NAV — History** | `client.nav.history()` | — | ✅ | `as_df` auto-flattens nested `nav_groups` |
@@ -20,7 +20,7 @@ Provides clean, typed access to NAV data, TER (Total Expense Ratio), Fund Perfor
 | **NAV — Flat file** | `client.nav.download_file()` | ✅ (txt) | — | Full NAVAll.txt for any date; raw bytes |
 | **TER — MF schemes** | `client.ter.fetch()` / `download_excel()` | ✅ xlsx | ✅ | Excel = single sheet; JSON = flat list |
 | **TER — SIF schemes** | `client.sif_ter.fetch()` / `download_excel()` | ✅ xlsx | ✅ | Same interface as TER; uses `sif_id` |
-| **Fund Performance** | `client.fund_performance.fetch()` | — | — | No server-side Excel (client-side only) |
+| **Fund Performance** | `client.fund_performance.fetch()` | — | ✅ | No server-side Excel (client-side only) |
 | **Tracking Error** | `client.tracking.error()` | — | ✅ | Includes Benchmark column per scheme |
 | **Tracking Difference** | `client.tracking.difference()` | — | ✅ | |
 | **Risk Parameters** | `client.risk_parameters.fetch()` | — | ✅ | Std dev, beta, Sharpe; requires `category_id` |
@@ -81,6 +81,9 @@ client = AMFIClient()
 # Latest NAV for all funds
 nav = client.nav.latest()
 
+# Latest NAV as a flat DataFrame
+nav_df = client.nav.latest(as_df=True)
+
 # TER Excel for March 2026 (all funds)
 excel_bytes = client.ter.download_excel(month="03-2026")
 open("ter_march_2026.xlsx", "wb").write(excel_bytes)
@@ -119,6 +122,9 @@ nav = client.nav.latest()
 
 # Latest NAV — single AMC (62 = 360 ONE Mutual Fund)
 nav = client.nav.latest(mf_id=62, fund_type="Open Ended")
+
+# Latest NAV as flat polars DataFrame (one row per scheme)
+nav_df = client.nav.latest(as_df=True)
 
 # Category-level summary
 cat = client.nav.latest_by_category(mf_id="all")
@@ -219,6 +225,9 @@ perf = client.fund_performance.fetch(
     mf_id=0,           # 0=All, or fund ID from filters()["mutualFundList"]
     report_date="07-May-2026",  # "DD-Mon-YYYY", defaults to last business day
 )
+
+# As polars DataFrame
+perf_df = client.fund_performance.fetch(category=1, sub_category=1, as_df=True)
 ```
 
 **Note:** Excel export is client-side only in the AMFI website; no server download endpoint exists.

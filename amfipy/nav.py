@@ -66,12 +66,16 @@ class NAVClient:
             as_df:     Return polars DataFrame (requires ``pip install amfipy[polars]``).
 
         Returns:
-            ``{"data": [{type, categories: [...]}], "count": N}``
+            When ``as_df=False``: nested dict ``{"data": [{type, categories: [...]}], "count": N}``.
+            When ``as_df=True``: flat polars DataFrame with one row per scheme.
         """
         with make_client(_REFERER, **self._kw) as c:
             r = c.get(_LATEST_PATH, params={"mfid": str(mf_id), "type": fund_type})
             r.raise_for_status()
-            return r.json()
+            data = r.json()
+        if as_df:
+            return _flatten_latest_df(data)
+        return data
 
     def latest_by_category(
         self,
@@ -278,11 +282,14 @@ class AsyncNAVClient:
     def __init__(self, **httpx_kwargs):
         self._kw = httpx_kwargs
 
-    async def latest(self, mf_id: str | int = "all", fund_type: str = "") -> dict:
+    async def latest(self, mf_id: str | int = "all", fund_type: str = "", as_df: bool = False) -> Any:
         async with make_async_client(_REFERER, **self._kw) as c:
             r = await c.get(_LATEST_PATH, params={"mfid": str(mf_id), "type": fund_type})
             r.raise_for_status()
-            return r.json()
+            data = r.json()
+        if as_df:
+            return _flatten_latest_df(data)
+        return data
 
     async def latest_by_category(self, mf_id: str | int = "all", fund_type: str = "") -> dict:
         async with make_async_client(_REFERER, **self._kw) as c:
@@ -401,4 +408,16 @@ def _flatten_history_df(data: Any) -> Any:
                     "nav_name": nav_name,
                     **rec,
                 })
+    return maybe_polars(rows, True)
+
+
+def _flatten_latest_df(data: Any) -> Any:
+    """Flatten latest NAV response into one row per scheme for polars."""
+    rows = []
+    if isinstance(data, dict):
+        for type_group in data.get("data", []):
+            for cat_block in type_group.get("categories", []):
+                for amc_group in cat_block.get("groups", []):
+                    for scheme in amc_group.get("schemes", []):
+                        rows.append(scheme)
     return maybe_polars(rows, True)

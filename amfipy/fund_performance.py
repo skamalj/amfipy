@@ -24,6 +24,7 @@ from datetime import date, timedelta
 from typing import Any
 
 from ._client import make_polling_client, make_polling_async_client
+from ._utils import maybe_polars
 
 _REFERER = "otherdata/fund-performance"
 _FILTERS_PATH = "/api/amfi/fundperformancefilters"
@@ -95,7 +96,8 @@ class FundPerformanceClient:
         sub_category: int = 1,
         mf_id: int = 0,
         report_date: str | None = None,
-    ) -> dict:
+        as_df: bool = False,
+    ) -> Any:
         """Fetch fund performance data.
 
         Args:
@@ -104,9 +106,10 @@ class FundPerformanceClient:
             sub_category:   Sub-category ID (fetch from :meth:`sub_categories`).
             mf_id:          0=All, or numeric mutual fund ID from :meth:`filters`.
             report_date:    "DD-Mon-YYYY" e.g. "07-May-2026". Defaults to last business day.
+            as_df:          Return polars DataFrame (requires ``pip install amfipy[polars]``).
 
         Returns:
-            Performance data dict with scheme-level metrics (returns, ratios, etc.).
+            List of scheme performance records (or polars DataFrame with ``as_df=True``).
         """
         if report_date is None:
             report_date = _last_business_date()
@@ -122,7 +125,10 @@ class FundPerformanceClient:
             r = c.post(_PERFORMANCE_PATH, json=body)
             r.raise_for_status()
             resp = r.json()
-            return resp.get("data", resp)
+        records = resp.get("data", resp)
+        if not isinstance(records, list):
+            records = [records]
+        return maybe_polars(records, as_df)
 
 
 # ---------------------------------------------------------------------------
@@ -156,7 +162,8 @@ class AsyncFundPerformanceClient:
         sub_category: int = 1,
         mf_id: int = 0,
         report_date: str | None = None,
-    ) -> dict:
+        as_df: bool = False,
+    ) -> Any:
         if report_date is None:
             report_date = _last_business_date()
 
@@ -171,4 +178,7 @@ class AsyncFundPerformanceClient:
             r = await c.post(_PERFORMANCE_PATH, json=body)
             r.raise_for_status()
             resp = r.json()
-            return resp.get("data", resp)
+        records = resp.get("data", resp)
+        if not isinstance(records, list):
+            records = [records]
+        return maybe_polars(records, as_df)

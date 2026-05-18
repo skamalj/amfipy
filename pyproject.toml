@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "amfipy"
-version = "0.2.0"
+version = "0.3.0"
 description = "Python client for AMFI India — NAV, TER, Fund Performance, Tracking Error, Risk Parameters and more"
 readme = "README.md"
 requires-python = ">=3.11"

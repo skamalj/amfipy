@@ -42,6 +42,23 @@ Returns a nested structure grouped by fund type → category → scheme.
 | `Repurchase_Price` | `str` | `"1109.52"` | Repurchase / redemption price |
 | `Sale_Price` | `str` | `"1109.52"` | Sale price |
 
+### Flattened DataFrame (`as_df=True`)
+
+`as_df=True` collapses the nested `data → categories → groups → schemes` structure into a single flat table. Each scheme record already contains its parent context fields:
+
+| Column | Type | Description |
+|---|---|---|
+| `mutualFundName` | `str` | AMC name |
+| `mutualFundId` | `str` | AMC numeric ID |
+| `type` | `str` | Fund type (Open Ended, Close Ended, Interval Fund) |
+| `category` | `str` | SEBI scheme category |
+| `schemeId` | `str` | AMFI scheme code |
+| `ISINPrimary` | `str` | Primary ISIN |
+| `ISINReinvestment` | `str` | Reinvestment ISIN (empty string if N/A) |
+| `schemeName` | `str` | Full scheme name |
+| `date` | `str` | NAV date (DD-Mon-YYYY) |
+| `netAssetValue` | `str` | Latest NAV value |
+
 ---
 
 ## `history()` — Historical NAV

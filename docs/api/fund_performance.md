@@ -3,7 +3,7 @@
 Scheme-level performance data — returns, benchmark comparisons, and maturity categories.
 
 !!! note
-    The AMFI website generates the Excel export client-side only. There is no server-side download endpoint; `fetch()` is the only way to retrieve data programmatically.
+    The AMFI website generates the Excel export client-side only. There is no server-side download endpoint; `fetch()` is the only way to retrieve data programmatically. Pass `as_df=True` to get a flat polars DataFrame.
 
 > **Data dictionary:** [Fund Performance field reference →](../data/fund_performance.md)
 

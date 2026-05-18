@@ -34,6 +34,17 @@ def test_fetch_specific_amc(client):
     assert data is not None
 
 
+def test_fetch_as_df(client):
+    polars = pytest.importorskip("polars")
+    df = client.fund_performance.fetch(
+        maturity_type=1, category=1, sub_category=1, mf_id=0,
+        report_date="15-May-2026", as_df=True
+    )
+    assert isinstance(df, polars.DataFrame)
+    assert len(df) > 0
+    assert "schemeName" in df.columns
+
+
 @pytest.mark.asyncio
 async def test_async_filters(async_client):
     data = await async_client.fund_performance.filters()
@@ -46,3 +57,14 @@ async def test_async_fetch(async_client):
         maturity_type=1, category=1, sub_category=1, mf_id=0
     )
     assert data is not None
+
+
+@pytest.mark.asyncio
+async def test_async_fetch_as_df(async_client):
+    polars = pytest.importorskip("polars")
+    df = await async_client.fund_performance.fetch(
+        maturity_type=1, category=1, sub_category=1, mf_id=0,
+        report_date="15-May-2026", as_df=True
+    )
+    assert isinstance(df, polars.DataFrame)
+    assert len(df) > 0

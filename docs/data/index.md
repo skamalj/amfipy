@@ -8,7 +8,7 @@ Field-level reference for every dataset returned by amfipy.  Each page documents
 |---|---|:---:|:---:|
 | [NAV Data](nav.md) | [`client.nav.*`](../api/nav.md) | ✅ | ✅ |
 | [TER Data](ter.md) | [`client.ter.*` / `client.sif_ter.*`](../api/ter.md) | ✅ | ✅ |
-| [Fund Performance](fund_performance.md) | [`client.fund_performance.*`](../api/fund_performance.md) | — | — |
+| [Fund Performance](fund_performance.md) | [`client.fund_performance.*`](../api/fund_performance.md) | ✅ | — |
 | [Tracking](tracking.md) | [`client.tracking.*`](../api/tracking.md) | ✅ | — |
 | [Risk Parameters](risk_parameters.md) | [`client.risk_parameters.*`](../api/risk_parameters.md) | ✅ | — |
 | [NFO](nfo.md) | [`client.nfo.*`](../api/nfo.md) | ✅ | — |

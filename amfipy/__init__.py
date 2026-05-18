@@ -46,7 +46,7 @@ from .aum import AUMClient, AsyncAUMClient
 from .other_data import OtherDataClient, AsyncOtherDataClient
 from .research import ResearchClient, AsyncResearchClient
 
-__version__ = "0.2.0"
+__version__ = "0.3.0"
 __all__ = [
     "AMFIClient",
     "AsyncAMFIClient",
